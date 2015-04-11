@@ -1,0 +1,1 @@
+include ':app', ':nu-art-core', ':reflection', ':module-manager'
