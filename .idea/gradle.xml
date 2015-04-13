@@ -9,7 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cyborg-core" />
+            <option value="$PROJECT_DIR$/cyborg-demo-app" />
             <option value="$PROJECT_DIR$/module-manager" />
             <option value="$PROJECT_DIR$/nu-art-core" />
             <option value="$PROJECT_DIR$/reflection" />

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cyborg-Demo</string>
+    <string name="InjectionExample_UpdateLabel">Update Label</string>
+    <string name="InjectionExample_DefaultText">I\'m just a lonely label</string>
+</resources>

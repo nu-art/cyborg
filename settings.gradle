@@ -1,1 +1,1 @@
-include ':app', ':nu-art-core', ':reflection', ':module-manager'
+include ':cyborg-demo-app', ':nu-art-core', ':reflection', ':module-manager', ':cyborg-core'
