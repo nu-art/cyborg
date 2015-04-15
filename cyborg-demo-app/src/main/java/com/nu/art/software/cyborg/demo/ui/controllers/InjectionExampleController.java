@@ -17,6 +17,9 @@ public class InjectionExampleController
 		extends CyborgController {
 
 
+	@ViewIdentifier(viewIds = {R.id.View1, R.id.View2, R.id.View3}, listeners = ViewListener.OnClick)
+	View[] views;
+
 	/**
 	 * Note the event reaching the <b>afterTextChanged</b> method
 	 */
