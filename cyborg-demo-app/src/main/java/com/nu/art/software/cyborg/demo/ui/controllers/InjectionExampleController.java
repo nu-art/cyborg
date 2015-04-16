@@ -11,6 +11,7 @@ import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
 import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.demo.R;
+import com.nu.art.software.cyborg.demo.model.MyModule;
 
 @SuppressWarnings("unused")
 public class InjectionExampleController
@@ -18,31 +19,33 @@ public class InjectionExampleController
 
 
 	@ViewIdentifier(viewIds = {R.id.View1, R.id.View2, R.id.View3}, listeners = ViewListener.OnClick)
-	View[] views;
+	private View[] views;
 
 	/**
 	 * Note the event reaching the <b>afterTextChanged</b> method
 	 */
 	@ViewIdentifier(viewId = R.id.InputText, listeners = ViewListener.OnTextChangedListener)
-	EditText inputText;
+	private EditText inputText;
 
 	/**
 	 * Note the event reaching the <b>onClick</b> and <b>onLongClick</b> methods respectively
 	 */
 	@ViewIdentifier(viewId = R.id.ResultTextView, listeners = {ViewListener.OnLongClick, ViewListener.OnClick})
-	TextView resultTextView;
+	private TextView resultTextView;
 
 	/**
 	 * Note the event reaching the <b>onClick</b> method
 	 */
 	@ViewIdentifier(viewId = R.id.UpdateTextButton, listeners = {ViewListener.OnClick})
-	Button updateTextButton;
+	private Button updateTextButton;
 
 	/**
 	 * To see the {@link Restorable} feature in action you'll need to go to the developer options and check the "<i>Do not keep activities</i>" option
 	 */
 	@Restorable
-	String toSave;
+	private String toSave;
+
+	private MyModule module;
 
 	public InjectionExampleController() {
 		super(R.layout.v1_controller__injection_example);
