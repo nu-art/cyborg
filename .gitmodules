@@ -1,0 +1,16 @@
+[submodule "nu-art-core"]
+	path = nu-art-core
+	url = https://TacB0sS@bitbucket.org/nu-art-core/nu-art-core.git
+	branch = Cyborg-Demo
+[submodule "reflection"]
+	path = reflection
+	url = https://TacB0sS@bitbucket.org/nu-art-core/reflection.git
+	branch = Cyborg-Demo
+[submodule "module-manager"]
+	path = module-manager
+	url = https://TacB0sS@bitbucket.org/nu-art-core/module-manager.git
+	branch = Cyborg-Demo
+[submodule "cyborg-core"]
+	path = cyborg-core
+	url = https://TacB0sS@bitbucket.org/nu-art-cyborg/cyborg-core.git
+	branch = Cyborg-Demo
