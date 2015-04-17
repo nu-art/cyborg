@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="nu-art-core" pattern="file[nu-art-core]:src/main/java//*" />
+</component>

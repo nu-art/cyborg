@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="cyborg-core" pattern="file[cyborg-core]:src/main//*" />
+</component>
