@@ -1,3 +1,10 @@
+/*
+ *  Copyright (c) 2015 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+ *  Restricted usage under Binpress license
+ *
+ *  For more details go to: http://cyborg.binpress.com/product/cyborg/2052
+ */
+
 package com.nu.art.software.cyborg.demo.model;
 
 import com.nu.art.software.cyborg.annotations.ModuleDescriptor;
@@ -5,9 +12,6 @@ import com.nu.art.software.cyborg.core.CyborgModule;
 
 import java.util.ArrayList;
 
-/**
- * Created by tacb0ss on 4/16/15.
- */
 @ModuleDescriptor
 public class MyModule
 		extends CyborgModule {
@@ -34,6 +38,4 @@ public class MyModule
 	public int getCount() {
 		return listOfStrings.size();
 	}
-
-
 }

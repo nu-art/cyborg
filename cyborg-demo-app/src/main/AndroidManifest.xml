@@ -1,3 +1,10 @@
+<!--
+  ~  Copyright (c) 2015 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~  Restricted usage under Binpress license
+  ~
+  ~  For more details go to: http://cyborg.binpress.com/product/cyborg/2052
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.nu.art.software.cyborg.demo">
 
@@ -7,17 +14,6 @@
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
-
-        <activity
-            android:name="com.nu.art.software.cyborg.ui.ApplicationLauncher"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
 
     </application>
 
