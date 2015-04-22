@@ -22,6 +22,6 @@ public class CyborgDemoApplication
 	public void onCreate() {
 		super.onCreate();
 //		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__injection_example));
-		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__injection_example, MyModulePack.class));
+		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__storage_example, MyModulePack.class));
 	}
 }

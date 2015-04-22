@@ -10,7 +10,6 @@ package com.nu.art.software.cyborg.demo.model;
 import com.nu.art.software.cyborg.core.ModulesPack;
 
 /**
- *
  * Created by TacB0sS on 18-Apr 2015.
  */
 @SuppressWarnings("unchecked")
@@ -19,7 +18,7 @@ public class MyModulePack
 
 
 	private MyModulePack() {
-		super(MyModule.class);
+		super(MyModule.class, MyStorageModule.class);
 	}
 
 	@Override
