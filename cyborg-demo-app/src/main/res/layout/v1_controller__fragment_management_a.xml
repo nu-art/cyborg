@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add A"
+            android:id="@+id/AddA"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add B"
+            android:id="@+id/AddB"
+            android:layout_above="@+id/ReplaceA2B"
+            android:layout_toRightOf="@+id/AddA"
+            android:layout_toEndOf="@+id/AddA"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add C"
+            android:id="@+id/AddC"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/AddB"
+            android:layout_toEndOf="@+id/AddB"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="A -> B"
+            android:id="@+id/ReplaceA2B"
+            android:layout_below="@+id/AddA"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="A -> C"
+            android:id="@+id/ReplaceA2C"
+            android:layout_below="@+id/AddA"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="B -> C"
+            android:id="@+id/ReplaceB2C"
+            android:layout_below="@+id/AddA"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="B -> A"
+            android:id="@+id/ReplaceB2A"
+            android:layout_below="@+id/AddA"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="right"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="C -> A"
+            android:id="@+id/ReplaceC2A"
+            android:layout_below="@+id/AddA"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="C -> B"
+            android:id="@+id/ReplaceC2B"
+            android:layout_below="@+id/AddA"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Remove A"
+            android:id="@+id/RemoveA"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Remove B"
+            android:id="@+id/RemoveB"
+            android:layout_above="@+id/ReplaceA2B"
+            android:layout_toRightOf="@+id/RemoveA"
+            android:layout_toEndOf="@+id/RemoveA"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Remove C"
+            android:id="@+id/RemoveC"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/RemoveB"
+            android:layout_toEndOf="@+id/RemoveB"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ParentLayoutId">
+    </FrameLayout>
+
+</LinearLayout>

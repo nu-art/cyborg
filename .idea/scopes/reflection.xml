@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="reflection" pattern="file[reflection]:src/main/java//*" />
-</component>

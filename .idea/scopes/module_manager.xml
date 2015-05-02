@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="module-manager" pattern="file[module-manager]:src/main/java//*" />
-</component>

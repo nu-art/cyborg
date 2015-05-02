@@ -1,11 +1,3 @@
 <component name="CopyrightManager">
-  <settings default="">
-    <module2copyright>
-      <element module="cyborg-core" copyright="Adam vdk - Cyborg - Binpress" />
-      <element module="cyborg-demo-app" copyright="Adam vdk - Cyborg - Binpress" />
-      <element module="nu-art-core" copyright="Adam vdk - Infra" />
-      <element module="reflection" copyright="Adam vdk - Infra" />
-      <element module="module-manager" copyright="Adam vdk - Infra" />
-    </module2copyright>
-  </settings>
+  <settings default="" />
 </component>
