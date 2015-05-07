@@ -8,13 +8,15 @@
 package com.nu.art.software.cyborg.demo.ui.controllers.dynamicFragmentManagement;
 
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
 import com.nu.art.software.cyborg.core.CyborgController;
-import com.nu.art.software.cyborg.core.FragmentTransactionConfig;
-import com.nu.art.software.cyborg.core.FragmentTransactionConfig.TransactionType;
+import com.nu.art.software.cyborg.core.FragmentStack;
 import com.nu.art.software.cyborg.demo.R;
 
 @SuppressWarnings("unused")
@@ -22,69 +24,79 @@ public class DynamicFragmentManagementController
 		extends CyborgController {
 
 
-	@ViewIdentifier(viewIds = {R.id.AddA, R.id.AddB, R.id.AddC, R.id.RemoveA, R.id.RemoveB, R.id.RemoveC, R.id.ReplaceA2B, R.id.ReplaceA2C, R.id.ReplaceB2C,
-			R.id.ReplaceB2A, R.id.ReplaceC2A, R.id.ReplaceC2B}, listeners = ViewListener.OnClick)
+	@ViewIdentifier(viewIds = {R.id.AddA, R.id.AddB, R.id.AddC}, listeners = ViewListener.OnClick)
 	private View[] views;
+
+	@ViewIdentifier(viewId = R.id.FragmentStackLabel)
+	private TextView fragmentStack;
+
+
+	@ViewIdentifier(viewId = R.id.AddToLeftStack, listeners = ViewListener.OnCheckChanged)
+	private CheckBox addToLeftStack;
 
 	@Restorable
 	private String toSave;
 
 	private String notToSave;
 
-	FragmentTransactionConfig transactionConfig = new FragmentTransactionConfig();
+	private FragmentStack parentStack_Left;
+
+	private FragmentStack parentStack_Right;
+
+	private FragmentStack currentStack;
 
 	public DynamicFragmentManagementController() {
 		super(R.layout.v1_controller__fragment_management_a);
-		transactionConfig.setParentId(R.id.ParentLayoutId);
 	}
 
+	@Override
+	protected void onCreate() {
+		parentStack_Left = new FragmentStack(getFragmentManager(), R.id.ParentLayoutId1);
+		parentStack_Right = new FragmentStack(getFragmentManager(), R.id.ParentLayoutId2);
+		currentStack = parentStack_Right;
+
+		postOnUI(30, new Runnable() {
+			@Override
+			public void run() {
+				CyborgController[] controllers = getActivity().getControllers();
+				String fragStack = "";
+				for (CyborgController controller : controllers) {
+					if (controller == DynamicFragmentManagementController.this)
+						continue;
+					fragStack += controller.getFragmentTag() + "(" + controller.getState() + ")\n";
+				}
+				fragmentStack.setText(fragStack);
+
+				if (isDestroyed())
+					return;
+				postOnUI(100, this);
+			}
+		});
+	}
+
+	@Override
+	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		currentStack = !isChecked ? parentStack_Right : parentStack_Left;
+	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.AddA:
-				transactionConfig.setControllerType(DynamicAController.class);
-				transactionConfig.setType(TransactionType.Add);
-				transactionConfig.setTag("TagA");
+				currentStack.addFragment(DynamicAController.class, "TagA");
 				break;
 			case R.id.AddB:
-				transactionConfig.setControllerType(DynamicBController.class);
-				transactionConfig.setType(TransactionType.Add);
-				transactionConfig.setTag("TagB");
+				currentStack.addFragment(DynamicBController.class, "TagB");
 				break;
 			case R.id.AddC:
-				transactionConfig.setControllerType(DynamicCController.class);
-				transactionConfig.setType(TransactionType.Add);
-				transactionConfig.setTag("TagC");
-				break;
-			case R.id.RemoveA:
-				transactionConfig.setControllerType(DynamicAController.class);
-				transactionConfig.setType(TransactionType.Remove);
-				transactionConfig.setTag("TagA");
-				break;
-			case R.id.RemoveB:
-				transactionConfig.setControllerType(DynamicBController.class);
-				transactionConfig.setType(TransactionType.Remove);
-				transactionConfig.setTag("TagB");
-				break;
-			case R.id.RemoveC:
-				transactionConfig.setControllerType(DynamicCController.class);
-				transactionConfig.setType(TransactionType.Remove);
-				transactionConfig.setTag("TagC");
-				break;
-			case R.id.ReplaceA2B:
-				break;
-			case R.id.ReplaceA2C:
-				break;
-			case R.id.ReplaceB2C:
-				break;
-			case R.id.ReplaceB2A:
-				break;
-			case R.id.ReplaceC2A:
-				break;
-			case R.id.ReplaceC2B:
+				currentStack.addFragment(DynamicCController.class, "TagC");
 				break;
 		}
-		executeFragmentConfig(transactionConfig);
+	}
+
+	@Override
+	public boolean onBackPressed() {
+		currentStack.pop();
+		return true;
 	}
 }
