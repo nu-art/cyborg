@@ -7,6 +7,7 @@
 
 package com.nu.art.software.cyborg.demo.ui.controllers.dynamicFragmentManagement;
 
+import android.os.AsyncTask;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
+import com.nu.art.software.cyborg.core.CyborgActivity;
 import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.core.FragmentStack;
 import com.nu.art.software.cyborg.demo.R;
@@ -23,13 +25,11 @@ import com.nu.art.software.cyborg.demo.R;
 public class DynamicFragmentManagementController
 		extends CyborgController {
 
-
 	@ViewIdentifier(viewIds = {R.id.AddA, R.id.AddB, R.id.AddC}, listeners = ViewListener.OnClick)
 	private View[] views;
 
 	@ViewIdentifier(viewId = R.id.FragmentStackLabel)
 	private TextView fragmentStack;
-
 
 	@ViewIdentifier(viewId = R.id.AddToLeftStack, listeners = ViewListener.OnCheckChanged)
 	private CheckBox addToLeftStack;
@@ -47,6 +47,19 @@ public class DynamicFragmentManagementController
 
 	public DynamicFragmentManagementController() {
 		super(R.layout.v1_controller__fragment_management_a);
+	}
+
+	class Sometask
+			extends AsyncTask<Object, Object, Object> {
+
+		public Sometask(CyborgActivity activity) {
+
+		}
+
+		@Override
+		protected Object doInBackground(Object... objects) {
+			return new Object();
+		}
 	}
 
 	@Override
@@ -72,6 +85,16 @@ public class DynamicFragmentManagementController
 				postOnUI(100, this);
 			}
 		});
+		Sometask task1 = new Sometask(getActivity());
+		task1.execute(new Object());
+		Sometask task2 = new Sometask(getActivity());
+		task2.execute(new Object());
+		Sometask task3 = new Sometask(getActivity());
+		task3.execute(new Object());
+		Sometask task4 = new Sometask(getActivity());
+		task4.execute(new Object());
+		Sometask task5 = new Sometask(getActivity());
+		task5.execute(new Object());
 	}
 
 	@Override
