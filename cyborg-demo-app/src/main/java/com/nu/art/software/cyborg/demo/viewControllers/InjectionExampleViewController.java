@@ -5,7 +5,7 @@
  *  For more details go to: http://cyborg.binpress.com/product/cyborg/2052
  */
 
-package com.nu.art.software.cyborg.demo.ui.controllers;
+package com.nu.art.software.cyborg.demo.viewControllers;
 
 import android.text.Editable;
 import android.view.View;
@@ -16,14 +16,13 @@ import android.widget.TextView;
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
-import com.nu.art.software.cyborg.core.CyborgFragmentController;
+import com.nu.art.software.cyborg.core.CyborgViewController;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.model.MyModule;
 
 @SuppressWarnings("unused")
-public class InjectionExampleController
-		extends CyborgFragmentController {
-
+public class InjectionExampleViewController
+		extends CyborgViewController {
 
 	@ViewIdentifier(viewIds = {R.id.View1, R.id.View2, R.id.View3}, listeners = ViewListener.OnClick)
 	private View[] views;
@@ -54,7 +53,7 @@ public class InjectionExampleController
 
 	private MyModule module;
 
-	public InjectionExampleController() {
+	public InjectionExampleViewController() {
 		super(R.layout.v1_controller__injection_example);
 	}
 

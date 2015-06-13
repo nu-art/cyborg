@@ -10,7 +10,7 @@ package com.nu.art.software.cyborg.demo.ui.controllers;
 import android.os.Handler;
 import android.util.Log;
 
-import com.nu.art.software.cyborg.core.CyborgController;
+import com.nu.art.software.cyborg.core.CyborgFragmentController;
 import com.nu.art.software.cyborg.core.modules.PreferencesModule;
 import com.nu.art.software.cyborg.core.modules.PreferencesModule.PreferenceEnumKey;
 import com.nu.art.software.cyborg.demo.R;
@@ -18,7 +18,7 @@ import com.nu.art.software.cyborg.demo.model.MyStorageModule;
 import com.nu.art.software.cyborg.demo.model.MyStorageModule.CyborgDemoPreferences;
 
 public class StorageExampleController
-		extends CyborgController {
+		extends CyborgFragmentController {
 
 
 	public enum MyEnum {

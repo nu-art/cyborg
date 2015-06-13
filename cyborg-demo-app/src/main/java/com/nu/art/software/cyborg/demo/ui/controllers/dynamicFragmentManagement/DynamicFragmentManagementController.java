@@ -16,14 +16,14 @@ import android.widget.TextView;
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
-import com.nu.art.software.cyborg.core.CyborgActivity;
-import com.nu.art.software.cyborg.core.CyborgController;
+import com.nu.art.software.cyborg.core.CyborgFragmentActivity;
+import com.nu.art.software.cyborg.core.CyborgFragmentController;
 import com.nu.art.software.cyborg.core.FragmentStack;
 import com.nu.art.software.cyborg.demo.R;
 
 @SuppressWarnings("unused")
 public class DynamicFragmentManagementController
-		extends CyborgController {
+		extends CyborgFragmentController {
 
 	@ViewIdentifier(viewIds = {R.id.AddA, R.id.AddB, R.id.AddC}, listeners = ViewListener.OnClick)
 	private View[] views;
@@ -52,7 +52,7 @@ public class DynamicFragmentManagementController
 	class Sometask
 			extends AsyncTask<Object, Object, Object> {
 
-		public Sometask(CyborgActivity activity) {
+		public Sometask(CyborgFragmentActivity activity) {
 
 		}
 
@@ -71,9 +71,9 @@ public class DynamicFragmentManagementController
 		postOnUI(30, new Runnable() {
 			@Override
 			public void run() {
-				CyborgController[] controllers = getActivity().getControllers();
+				CyborgFragmentController[] controllers = getActivity().getControllers();
 				String fragStack = "";
-				for (CyborgController controller : controllers) {
+				for (CyborgFragmentController controller : controllers) {
 					if (controller == DynamicFragmentManagementController.this)
 						continue;
 					fragStack += controller.getFragmentTag() + "(" + controller.getState() + ")\n";
@@ -106,13 +106,13 @@ public class DynamicFragmentManagementController
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.AddA:
-				currentStack.addFragment(DynamicAController.class, "TagA");
+				currentStack.addFragment(DynamicAFragmentController.class, "TagA");
 				break;
 			case R.id.AddB:
-				currentStack.addFragment(DynamicBController.class, "TagB");
+				currentStack.addFragment(DynamicBFragmentController.class, "TagB");
 				break;
 			case R.id.AddC:
-				currentStack.addFragment(DynamicCController.class, "TagC");
+				currentStack.addFragment(DynamicCFragmentController.class, "TagC");
 				break;
 		}
 	}
