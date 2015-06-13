@@ -5,7 +5,7 @@
  *  For more details go to: http://cyborg.binpress.com/product/cyborg/2052
  */
 
-package com.nu.art.software.cyborg.demo.viewControllers;
+package com.nu.art.software.cyborg.demo.ui.controllers;
 
 import android.text.Editable;
 import android.view.View;
@@ -21,8 +21,9 @@ import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.model.MyModule;
 
 @SuppressWarnings("unused")
-public class InjectionExampleViewController
+public class RecyclerExampleController
 		extends CyborgViewController {
+
 
 	@ViewIdentifier(viewIds = {R.id.View1, R.id.View2, R.id.View3}, listeners = ViewListener.OnClick)
 	private View[] views;
@@ -53,7 +54,7 @@ public class InjectionExampleViewController
 
 	private MyModule module;
 
-	public InjectionExampleViewController() {
+	public RecyclerExampleController() {
 		super(R.layout.v1_controller__injection_example);
 	}
 

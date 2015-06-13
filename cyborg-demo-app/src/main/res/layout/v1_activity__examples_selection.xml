@@ -6,11 +6,10 @@
   ~  For more details go to: http://cyborg.binpress.com/product/cyborg/2052
   -->
 
-
 <com.nu.art.software.cyborg.core.CyborgView
     android:id="@+id/fragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    custom:controller="com.nu.art.software.cyborg.demo.ui.controllers.StorageExampleController"/>
+    custom:controller="com.nu.art.software.cyborg.demo.ui.controllers.examplesSelection.ExamplesSelectionController"/>

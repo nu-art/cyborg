@@ -10,7 +10,7 @@ package com.nu.art.software.cyborg.demo.ui.controllers;
 import android.os.Handler;
 import android.util.Log;
 
-import com.nu.art.software.cyborg.core.CyborgFragmentController;
+import com.nu.art.software.cyborg.core.CyborgViewController;
 import com.nu.art.software.cyborg.core.modules.PreferencesModule;
 import com.nu.art.software.cyborg.core.modules.PreferencesModule.PreferenceEnumKey;
 import com.nu.art.software.cyborg.demo.R;
@@ -18,8 +18,7 @@ import com.nu.art.software.cyborg.demo.model.MyStorageModule;
 import com.nu.art.software.cyborg.demo.model.MyStorageModule.CyborgDemoPreferences;
 
 public class StorageExampleController
-		extends CyborgFragmentController {
-
+		extends CyborgViewController {
 
 	public enum MyEnum {
 		Value1,
@@ -38,7 +37,7 @@ public class StorageExampleController
 	}
 
 	@Override
-	protected void onCreate() {
+	public void onCreate() {
 		preferences.dropPreferences(CyborgDemoPreferences.Private);
 		preferences.dropPreferences(CyborgDemoPreferences.OtherStuff);
 		dynamicValue = preferences.new PreferenceEnumKey<MyEnum>("Dynamic Enum", MyEnum.Value1);
@@ -76,6 +75,5 @@ public class StorageExampleController
 			}
 		};
 		handler.postDelayed(printValue, 1000);
-
 	}
 }

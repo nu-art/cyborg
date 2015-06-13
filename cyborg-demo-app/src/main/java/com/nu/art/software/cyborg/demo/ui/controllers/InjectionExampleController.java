@@ -16,13 +16,13 @@ import android.widget.TextView;
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
-import com.nu.art.software.cyborg.core.CyborgFragmentController;
+import com.nu.art.software.cyborg.core.CyborgViewController;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.model.MyModule;
 
 @SuppressWarnings("unused")
 public class InjectionExampleController
-		extends CyborgFragmentController {
+		extends CyborgViewController {
 
 
 	@ViewIdentifier(viewIds = {R.id.View1, R.id.View2, R.id.View3}, listeners = ViewListener.OnClick)

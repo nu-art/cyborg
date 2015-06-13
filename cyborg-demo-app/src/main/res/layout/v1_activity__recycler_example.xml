@@ -6,7 +6,6 @@
   ~  For more details go to: http://cyborg.binpress.com/product/cyborg/2052
   -->
 
-
 <com.nu.art.software.cyborg.core.CyborgView
     android:id="@+id/fragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
