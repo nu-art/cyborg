@@ -19,11 +19,11 @@ import com.nu.art.software.cyborg.common.consts.ViewListener;
 import com.nu.art.software.cyborg.core.CyborgViewController;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.model.MyModule;
+import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
-@SuppressWarnings("unused")
+@ReflectiveInitialization
 public class InjectionExampleController
 		extends CyborgViewController {
-
 
 	@ViewIdentifier(viewIds = {R.id.View1, R.id.View2, R.id.View3}, listeners = ViewListener.OnClick)
 	private View[] views;
@@ -54,7 +54,7 @@ public class InjectionExampleController
 
 	private MyModule module;
 
-	public InjectionExampleController() {
+	private InjectionExampleController() {
 		super(R.layout.v1_controller__injection_example);
 	}
 
@@ -87,7 +87,7 @@ public class InjectionExampleController
 	}
 
 	@Override
-	protected void prepareToSaveState() {
+	protected void onPreSaveState() {
 		toSave = resultTextView.getText().toString();
 	}
 

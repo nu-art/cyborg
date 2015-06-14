@@ -27,7 +27,7 @@ public class ExamplesSelectionController
 
 	private CyborgAdapter<Example, ExampleRenderer> examples;
 
-	public ExamplesSelectionController() {
+	private ExamplesSelectionController() {
 		super(R.layout.v1_controller__examples_selection);
 	}
 

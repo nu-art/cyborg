@@ -7,92 +7,67 @@
 
 package com.nu.art.software.cyborg.demo.ui.controllers;
 
-import android.text.Editable;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
+import com.nu.art.software.cyborg.core.CyborgAdapter;
+import com.nu.art.software.cyborg.core.CyborgRecycler;
 import com.nu.art.software.cyborg.core.CyborgViewController;
+import com.nu.art.software.cyborg.core.ItemRenderer;
 import com.nu.art.software.cyborg.demo.R;
-import com.nu.art.software.cyborg.demo.model.MyModule;
+import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
-@SuppressWarnings("unused")
+@ReflectiveInitialization
 public class RecyclerExampleController
 		extends CyborgViewController {
 
+	@ViewIdentifier(viewId = R.id.ExampleSelectionList, listeners = {ViewListener.OnRecyclerItemClicked})
+	private CyborgRecycler recycler;
 
-	@ViewIdentifier(viewIds = {R.id.View1, R.id.View2, R.id.View3}, listeners = ViewListener.OnClick)
+	@ViewIdentifier(viewIds = {R.id.OrientationToggle, R.id.IncrementColumn, R.id.DecrementColumn}, listeners = ViewListener.OnClick)
 	private View[] views;
 
-	/**
-	 * Note the event reaching the <b>afterTextChanged</b> method
-	 */
-	@ViewIdentifier(viewId = R.id.InputText, listeners = ViewListener.OnTextChangedListener)
-	private EditText inputText;
+	private CyborgAdapter<Integer, IntegerRenderer> numbers;
 
-	/**
-	 * Note the event reaching the <b>onClick</b> and <b>onLongClick</b> methods respectively
-	 */
-	@ViewIdentifier(viewId = R.id.ResultTextView, listeners = {ViewListener.OnLongClick, ViewListener.OnClick})
-	private TextView resultTextView;
-
-	/**
-	 * Note the event reaching the <b>onClick</b> method
-	 */
-	@ViewIdentifier(viewId = R.id.UpdateTextButton, listeners = {ViewListener.OnClick})
-	private Button updateTextButton;
-
-	/**
-	 * To see the {@link Restorable} feature in action you'll need to go to the developer options and check the "<i>Do not keep activities</i>" option
-	 */
-	@Restorable
-	private String toSave;
-
-	private MyModule module;
-
-	public RecyclerExampleController() {
-		super(R.layout.v1_controller__injection_example);
-	}
-
-	@Override
-	public void afterTextChanged(TextView view, Editable editableValue) {
-		if (view == inputText) {
-			logInfo("Text Changed: " + inputText.getText().toString());
-		}
+	private RecyclerExampleController() {
+		super(R.layout.v1_controller__recycler_example);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.ResultTextView:
-				resultTextView.setText("onClick");
+			case R.id.OrientationToggle:
+				orie
 				break;
-			case R.id.UpdateTextButton:
-				resultTextView.setText(toSave = inputText.getText().toString());
+			case R.id.IncrementColumn:
+				break;
+			case R.id.DecrementColumn:
 		}
 	}
 
 	@Override
-	public boolean onLongClick(View v) {
-		switch (v.getId()) {
-			case R.id.ResultTextView:
-				resultTextView.setText("onLongClick");
-				return true;
-		}
-		return false;
-	}
-
-	@Override
-	protected void prepareToSaveState() {
-		toSave = resultTextView.getText().toString();
+	protected void onPreSaveState() {
 	}
 
 	@Override
 	protected void onPostRestoredState() {
-		inputText.setText(toSave);
+	}
+
+	private static class IntegerRenderer
+			extends ItemRenderer<Integer> {
+
+		@ViewIdentifier(viewId = R.id.ExampleLabel)
+		TextView exampleLabel;
+
+		public IntegerRenderer() {
+			super(R.layout.list_node__example);
+		}
+
+		@Override
+		protected void renderItem(Integer item) {
+
+		}
 	}
 }

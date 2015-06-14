@@ -16,7 +16,9 @@ import com.nu.art.software.cyborg.core.modules.PreferencesModule.PreferenceEnumK
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.model.MyStorageModule;
 import com.nu.art.software.cyborg.demo.model.MyStorageModule.CyborgDemoPreferences;
+import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
+@ReflectiveInitialization
 public class StorageExampleController
 		extends CyborgViewController {
 
@@ -32,7 +34,7 @@ public class StorageExampleController
 
 	MyStorageModule myStorage;
 
-	public StorageExampleController() {
+	private StorageExampleController() {
 		super(R.layout.v1_controller__storage_example);
 	}
 
