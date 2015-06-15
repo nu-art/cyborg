@@ -12,12 +12,15 @@ import android.util.Log;
 
 import com.nu.art.software.cyborg.core.CyborgViewController;
 import com.nu.art.software.cyborg.core.modules.PreferencesModule;
-import com.nu.art.software.cyborg.core.modules.PreferencesModule.PreferenceEnumKey;
+import com.nu.art.software.cyborg.core.modules.PreferencesModule.PreferenceEnum;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.model.MyStorageModule;
 import com.nu.art.software.cyborg.demo.model.MyStorageModule.CyborgDemoPreferences;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
+/**
+ * Cyborg has a built-in TypeSafePreferences, inorder to use them follow the {@link MyStorageModule} and see how the preferences are defined...
+ */
 @ReflectiveInitialization
 public class StorageExampleController
 		extends CyborgViewController {
@@ -28,7 +31,7 @@ public class StorageExampleController
 		Value3,
 	}
 
-	PreferenceEnumKey<MyEnum> dynamicValue;
+	PreferenceEnum<MyEnum> dynamicValue;
 
 	PreferencesModule preferences;
 
@@ -42,7 +45,7 @@ public class StorageExampleController
 	public void onCreate() {
 		preferences.dropPreferences(CyborgDemoPreferences.Private);
 		preferences.dropPreferences(CyborgDemoPreferences.OtherStuff);
-		dynamicValue = preferences.new PreferenceEnumKey<MyEnum>("Dynamic Enum", MyEnum.Value1);
+		dynamicValue = preferences.new PreferenceEnum<MyEnum>("Dynamic Enum", MyEnum.class, MyEnum.Value1);
 
 		MyEnum defaultEnum = dynamicValue.get();
 		Log.i("GenericPreferences", "defaultEnum: " + defaultEnum);

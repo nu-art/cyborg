@@ -12,5 +12,6 @@
         android:padding="10dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="ads"
+        android:maxLines="2"
         android:gravity="center_vertical"/>
 </LinearLayout>

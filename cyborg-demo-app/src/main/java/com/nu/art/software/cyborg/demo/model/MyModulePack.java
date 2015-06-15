@@ -16,7 +16,6 @@ import com.nu.art.software.cyborg.core.ModulesPack;
 public class MyModulePack
 		extends ModulesPack {
 
-
 	private MyModulePack() {
 		super(MyModule.class, MyStorageModule.class);
 	}

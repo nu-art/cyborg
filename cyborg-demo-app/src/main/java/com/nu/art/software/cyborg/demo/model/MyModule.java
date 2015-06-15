@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class MyModule
 		extends CyborgModule {
 
-
 	private ArrayList<String> listOfStrings = new ArrayList<String>();
 
 	@Override

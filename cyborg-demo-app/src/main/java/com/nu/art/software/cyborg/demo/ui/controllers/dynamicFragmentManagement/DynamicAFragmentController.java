@@ -6,7 +6,6 @@ import com.nu.art.software.cyborg.demo.R;
 public class DynamicAFragmentController
 		extends CyborgViewController {
 
-
 	public DynamicAFragmentController() {
 		super(R.layout.v1_controller__dynamic_a);
 	}

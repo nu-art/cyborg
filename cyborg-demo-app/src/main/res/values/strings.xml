@@ -11,4 +11,5 @@
     <string name="InjectionExample_DefaultText">I\'m just a lonely label</string>
     <string name="ExampleLabel_Injection">Injection &amp; Restore state Example</string>
     <string name="ExampleLabel_Storage">Storage Example</string>
+    <string name="ExampleLabel_Recycler">Recycler Example\n&amp; Stateful Complex Object </string>
 </resources>

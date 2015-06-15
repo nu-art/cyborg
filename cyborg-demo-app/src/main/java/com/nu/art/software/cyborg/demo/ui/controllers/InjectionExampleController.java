@@ -21,6 +21,10 @@ import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.model.MyModule;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
+/**
+ * This example gives you a small impression of what Cyborg can do for you in terms of minimizing code and utilizing events and callbacks...
+ */
+@Restorable
 @ReflectiveInitialization
 public class InjectionExampleController
 		extends CyborgViewController {
@@ -60,6 +64,7 @@ public class InjectionExampleController
 
 	@Override
 	public void afterTextChanged(TextView view, Editable editableValue) {
+		// <<< ADD A BREAKPOINT AT THE NEXT LINE
 		if (view == inputText) {
 			logInfo("Text Changed: " + inputText.getText().toString());
 		}
@@ -67,6 +72,7 @@ public class InjectionExampleController
 
 	@Override
 	public void onClick(View v) {
+		// <<< ADD A BREAKPOINT AT THE NEXT LINE
 		switch (v.getId()) {
 			case R.id.ResultTextView:
 				resultTextView.setText("onClick");
@@ -78,6 +84,7 @@ public class InjectionExampleController
 
 	@Override
 	public boolean onLongClick(View v) {
+		// <<< ADD A BREAKPOINT AT THE NEXT LINE
 		switch (v.getId()) {
 			case R.id.ResultTextView:
 				resultTextView.setText("onLongClick");

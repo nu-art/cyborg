@@ -9,13 +9,13 @@
         android:id="@+id/RecyclerExample"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        cyborg:horizontalSpacing="10dp"
-        cyborg:landscapeColumnsCount="2"
-        cyborg:orientation="vertical"
-        cyborg:portraitColumnsCount="1"
-        cyborg:verticalSpacing="5dp"
+        android:layout_above="@+id/OrientationToggle"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/OrientationToggle"/>
+        cyborg:horizontalSpacing="10dp"
+        cyborg:landscapeColumnsCount="3"
+        cyborg:orientation="vertical"
+        cyborg:portraitColumnsCount="3"
+        cyborg:verticalSpacing="5dp"/>
 
     <Button
         android:id="@+id/DecrementColumn"
@@ -45,6 +45,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:text="Horizontal"/>
+
+    <CheckBox
+        android:id="@+id/SaveRecyclerState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/RecyclerExample"
+        android:layout_toEndOf="@+id/OrientationToggle"
+        android:layout_toRightOf="@+id/OrientationToggle"
+        android:checked="false"
+        android:text="Save State"/>
 
 
 </RelativeLayout>

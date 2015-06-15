@@ -15,11 +15,15 @@ import com.nu.art.software.cyborg.core.CyborgModule;
 import com.nu.art.software.cyborg.core.modules.PreferencesModule;
 import com.nu.art.software.cyborg.core.modules.PreferencesModule.PreferenceKey;
 import com.nu.art.software.cyborg.core.modules.PreferencesModule.PreferencesStorage;
+import com.nu.art.software.cyborg.demo.ui.controllers.StorageExampleController;
 
+/**
+ * In the past you needed to write so much code to save or load an entry to and from the shared preferences... today, one line!<br>
+ * Check out the {@link StorageExampleController}
+ */
 @ModuleDescriptor
 public final class MyStorageModule
 		extends CyborgModule {
-
 
 	/**
 	 * These represent the {@link SharedPreferences} details for the {@link PreferencesStorage} to use!
@@ -42,7 +46,7 @@ public final class MyStorageModule
 		}
 
 		@Override
-		public String getStorageName() {
+		public String getPreferencesName() {
 			return preferencesName;
 		}
 
@@ -75,10 +79,9 @@ public final class MyStorageModule
 	@Override
 	protected void init() {
 		PreferencesModule preferences = getModule(PreferencesModule.class);
-		ExpiredString = preferences.new PreferenceKey<String>("Private - This will expire", "No Value Set", 30000, CyborgDemoPreferences.Persistent);
-		PrivateString = preferences.new PreferenceKey<String>("Private - This Key Saves String", "If I would ever need a default value it would be here with the rest of the default values I would ever use in the entire app!!!");
-		IntegerValue = preferences.new PreferenceKey<Integer>("Public - This Key Saves an int", -111, CyborgDemoPreferences.OtherStuff);
-		LongValue = preferences.new PreferenceKey<Long>("Public - This Key Saves a long", -1L, CyborgDemoPreferences.OtherStuff);
+		ExpiredString = preferences.new StringPreference("Private - This will expire", "No Value Set", 30000, CyborgDemoPreferences.Persistent);
+		PrivateString = preferences.new StringPreference("Private - This Key Saves String", "If I would ever need a default value it would be here with the rest of the default values I would ever use in the entire app!!!");
+		IntegerValue = preferences.new IntegerPreference("Public - This Key Saves an int", -111, CyborgDemoPreferences.OtherStuff);
+		LongValue = preferences.new LongPreference("Public - This Key Saves a long", -1L, CyborgDemoPreferences.OtherStuff);
 	}
-
 }
