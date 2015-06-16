@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.nu.art.software.cyborg.core.CyborgView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        custom:controller="com.nu.art.software.cyborg.demo.ui.controllers.EventDispatcherExampleController"
+        android:layout_weight="1"/>
+
+    <com.nu.art.software.cyborg.core.CyborgView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        custom:controller="com.nu.art.software.cyborg.demo.ui.controllers.EventReceiverExampleController"
+        android:layout_weight="1"/>
+</LinearLayout>

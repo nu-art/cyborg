@@ -9,6 +9,7 @@ public enum Example {
 	Injection(R.string.ExampleLabel_Injection, R.layout.v1_activity__injection_example), //
 	Storage(R.string.ExampleLabel_Storage, R.layout.v1_activity__storage_example), //
 	Recycler(R.string.ExampleLabel_Recycler, R.layout.v1_activity__recycler_example), //
+	EventDispatching(R.string.ExampleLabel_EventDispatching, R.layout.v1_activity__event_dispatching_example), //
 	;
 
 	private final int labelId;
