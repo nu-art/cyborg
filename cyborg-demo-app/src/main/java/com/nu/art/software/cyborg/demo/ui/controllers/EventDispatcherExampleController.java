@@ -7,7 +7,7 @@ import android.widget.EditText;
 import com.nu.art.software.core.generics.Processor;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
-import com.nu.art.software.cyborg.core.CyborgViewController;
+import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
@@ -16,7 +16,7 @@ import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
  */
 @ReflectiveInitialization
 public class EventDispatcherExampleController
-		extends CyborgViewController {
+		extends CyborgController {
 
 	/**
 	 * All event listener should be declared in the vicinity of the invoking class type... for example, this class dispatches the Text event, then it is the

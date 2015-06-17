@@ -3,7 +3,7 @@ package com.nu.art.software.cyborg.demo.ui.controllers;
 import android.widget.TextView;
 
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
-import com.nu.art.software.cyborg.core.CyborgViewController;
+import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.ui.controllers.EventDispatcherExampleController.TextEventListener;
 
@@ -11,7 +11,7 @@ import com.nu.art.software.cyborg.demo.ui.controllers.EventDispatcherExampleCont
  * Created by TacB0sS on 16-Jun 2015.
  */
 public class EventReceiverExampleController
-		extends CyborgViewController
+		extends CyborgController
 		implements TextEventListener {
 
 	@Override

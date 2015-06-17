@@ -10,7 +10,7 @@ import com.nu.art.software.cyborg.common.consts.ViewListener;
 import com.nu.art.software.cyborg.core.CyborgActivity;
 import com.nu.art.software.cyborg.core.CyborgAdapter;
 import com.nu.art.software.cyborg.core.CyborgRecycler;
-import com.nu.art.software.cyborg.core.CyborgViewController;
+import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.core.ItemRenderer;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
@@ -20,7 +20,7 @@ import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
  */
 @ReflectiveInitialization
 public class ExamplesSelectionController
-		extends CyborgViewController {
+		extends CyborgController {
 
 	@ViewIdentifier(viewId = R.id.ExampleSelectionList, listeners = {ViewListener.OnRecyclerItemClicked})
 	private CyborgRecycler recycler;

@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
-import com.nu.art.software.cyborg.core.CyborgViewController;
+import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.model.MyModule;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
@@ -27,7 +27,7 @@ import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 @Restorable
 @ReflectiveInitialization
 public class InjectionExampleController
-		extends CyborgViewController {
+		extends CyborgController {
 
 	@ViewIdentifier(viewIds = {R.id.View1, R.id.View2, R.id.View3}, listeners = ViewListener.OnClick)
 	private View[] views;
