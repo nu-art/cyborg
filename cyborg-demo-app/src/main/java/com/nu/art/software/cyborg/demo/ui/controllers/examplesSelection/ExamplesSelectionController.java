@@ -7,10 +7,10 @@ import android.widget.TextView;
 
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
-import com.nu.art.software.cyborg.core.CyborgActivity;
+import com.nu.art.software.cyborg.core.CyborgActivityBridgeImpl;
 import com.nu.art.software.cyborg.core.CyborgAdapter;
-import com.nu.art.software.cyborg.core.CyborgRecycler;
 import com.nu.art.software.cyborg.core.CyborgController;
+import com.nu.art.software.cyborg.core.CyborgRecycler;
 import com.nu.art.software.cyborg.core.ItemRenderer;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
@@ -42,7 +42,7 @@ public class ExamplesSelectionController
 	@Override
 	public void onRecyclerItemClicked(RecyclerView parentView, View view, int position) {
 		Example example = examples.getItem(position);
-		Intent intent = CyborgActivity.composeIntent(example.name(), example.getLayoutId());
+		Intent intent = CyborgActivityBridgeImpl.composeIntent(example.name(), example.getLayoutId());
 		startActivity(intent);
 	}
 
