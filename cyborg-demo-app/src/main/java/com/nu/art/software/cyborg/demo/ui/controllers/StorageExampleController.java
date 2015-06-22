@@ -73,6 +73,9 @@ public class StorageExampleController
 
 			@Override
 			public void run() {
+				if (isDestroyed())
+					return;
+
 				String value = myStorage.ExpiredString.get();
 				Log.i("GenericPreferences", "time passed: " + ((System.currentTimeMillis() - setAt) / 1000 + "sec, --- Value: " + value));
 				if (valueThatWillExpire.equals(value))

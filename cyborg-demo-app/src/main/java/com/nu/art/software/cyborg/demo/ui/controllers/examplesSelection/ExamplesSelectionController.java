@@ -8,10 +8,11 @@ import android.widget.TextView;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
 import com.nu.art.software.cyborg.core.CyborgActivityBridgeImpl;
-import com.nu.art.software.cyborg.core.CyborgAdapter;
 import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.core.CyborgRecycler;
 import com.nu.art.software.cyborg.core.ItemRenderer;
+import com.nu.art.software.cyborg.core.CyborgAdapter;
+import com.nu.art.software.cyborg.core.dataModels.ListDataModel;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
@@ -25,7 +26,7 @@ public class ExamplesSelectionController
 	@ViewIdentifier(viewId = R.id.ExampleSelectionList, listeners = {ViewListener.OnRecyclerItemClicked})
 	private CyborgRecycler recycler;
 
-	private CyborgAdapter<Example, ExampleRenderer> examples;
+	private ListDataModel<Example> dataModel;
 
 	private ExamplesSelectionController() {
 		super(R.layout.v1_controller__examples_selection);
@@ -34,14 +35,17 @@ public class ExamplesSelectionController
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		examples = new CyborgAdapter<Example, ExampleRenderer>(getActivity(), Example.class, ExampleRenderer.class);
-		examples.addAll(Example.values());
-		recycler.setAdapter(examples);
+		dataModel = new ListDataModel<Example>(Example.class);
+		dataModel.addItems(Example.values());
+
+		CyborgAdapter<Example> examplesAdapter = new CyborgAdapter<Example>(activityBridge, ExampleRenderer.class);
+		examplesAdapter.setDataModel(dataModel);
+		recycler.setAdapter(examplesAdapter);
 	}
 
 	@Override
 	public void onRecyclerItemClicked(RecyclerView parentView, View view, int position) {
-		Example example = examples.getItem(position);
+		Example example = dataModel.getItemForPosition(position);
 		Intent intent = CyborgActivityBridgeImpl.composeIntent(example.name(), example.getLayoutId());
 		startActivity(intent);
 	}

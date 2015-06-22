@@ -8,6 +8,7 @@
 package com.nu.art.software.cyborg.demo.ui.controllers;
 
 import android.content.res.Configuration;
+import android.graphics.PorterDuff.Mode;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -17,10 +18,11 @@ import android.widget.TextView;
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
-import com.nu.art.software.cyborg.core.CyborgAdapter;
-import com.nu.art.software.cyborg.core.CyborgRecycler;
 import com.nu.art.software.cyborg.core.CyborgController;
+import com.nu.art.software.cyborg.core.CyborgRecycler;
 import com.nu.art.software.cyborg.core.ItemRenderer;
+import com.nu.art.software.cyborg.core.CyborgAdapter;
+import com.nu.art.software.cyborg.core.dataModels.ListDataModel;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
@@ -62,12 +64,18 @@ public class RecyclerExampleController
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public void onCreate() {
-		CyborgAdapter<Integer, IntegerRenderer> numbers = new CyborgAdapter<Integer, IntegerRenderer>(getActivity(), Integer.class, IntegerRenderer.class);
+		CyborgAdapter<Number> numbers = new CyborgAdapter<Number>(activityBridge, IntegerRenderer.class, DoubleRenderer.class);
+		ListDataModel<Number> dataModel = new ListDataModel<Number>(Integer.class, Double.class);
 		for (int i = 0; i < 100; i++) {
-			numbers.add(i);
+			if (i % 2 == 0)
+				dataModel.addItems(i);
+			else
+				dataModel.addItems(i + 0.01 * i);
 		}
-		recycler.setAdapter(numbers);
+		numbers.setDataModel(dataModel);
+		recycler.setAdapter(numbers.getRecyclerAdapter(recycler));
 	}
 
 	@Override
@@ -122,6 +130,23 @@ public class RecyclerExampleController
 				break;
 		}
 		recycler.invalidateLayoutManager();
+	}
+
+	private static class DoubleRenderer
+			extends ItemRenderer<Double> {
+
+		@ViewIdentifier(viewId = R.id.ExampleLabel)
+		TextView exampleLabel;
+
+		public DoubleRenderer() {
+			super(R.layout.list_node__recycler_example);
+		}
+
+		@Override
+		protected void renderItem(Double item) {
+			exampleLabel.setText("" + item);
+			exampleLabel.getBackground().setColorFilter(getResources().getColor(android.R.color.darker_gray), Mode.MULTIPLY);
+		}
 	}
 
 	private static class IntegerRenderer
