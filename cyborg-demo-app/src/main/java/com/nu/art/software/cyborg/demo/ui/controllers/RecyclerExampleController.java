@@ -8,8 +8,8 @@
 package com.nu.art.software.cyborg.demo.ui.controllers;
 
 import android.content.res.Configuration;
-import android.graphics.PorterDuff.Mode;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.CheckBox;
@@ -18,11 +18,12 @@ import android.widget.TextView;
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
+import com.nu.art.software.cyborg.core.CyborgAdapter;
 import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.core.CyborgRecycler;
 import com.nu.art.software.cyborg.core.ItemRenderer;
-import com.nu.art.software.cyborg.core.CyborgAdapter;
 import com.nu.art.software.cyborg.core.dataModels.ListDataModel;
+import com.nu.art.software.cyborg.core.modules.ThreadsModule;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
@@ -59,6 +60,12 @@ public class RecyclerExampleController
 	@Restorable
 	private boolean saveRecyclerState;
 
+	private ThreadsModule threadsModule;
+
+	private Handler handler;
+
+	private ListDataModel<Number> dataModel;
+
 	private RecyclerExampleController() {
 		super(R.layout.v1_controller__recycler_example);
 	}
@@ -66,16 +73,42 @@ public class RecyclerExampleController
 	@Override
 	@SuppressWarnings("unchecked")
 	public void onCreate() {
-		CyborgAdapter<Number> numbers = new CyborgAdapter<Number>(activityBridge, IntegerRenderer.class, DoubleRenderer.class);
-		ListDataModel<Number> dataModel = new ListDataModel<Number>(Integer.class, Double.class);
+		CyborgAdapter<Number> numbers = new CyborgAdapter<Number>(activityBridge, IntegerRenderer.class, DoubleRenderer.class, FloatRenderer.class);
+		dataModel = new ListDataModel<Number>(Integer.class, Double.class, Float.class);
 		for (int i = 0; i < 100; i++) {
 			if (i % 2 == 0)
 				dataModel.addItems(i);
+			else if (i % 5 == 0)
+				dataModel.addItems((float) (i + 0.01 * i));
 			else
 				dataModel.addItems(i + 0.01 * i);
 		}
 		numbers.setDataModel(dataModel);
 		recycler.setAdapter(numbers.getRecyclerAdapter(recycler));
+//		handler = threadsModule.getDefaultHandler("A Random Thread");
+//		handler.post(new Runnable() {
+		//			int i = 0;
+		//
+		//			@Override
+		//			public void run() {
+		//				if (i == 100)
+		//					return;
+		//				if (i % 2 == 0)
+		//					dataModel.addItems(i);
+		//				else if (i % 5 == 0)
+		//					dataModel.addItems((float) (i + 0.01 * i));
+		//				else
+		//					dataModel.addItems(i + 0.01 * i);
+		//				i++;
+		//				postOnUI(new Runnable() {
+		//					@Override
+		//					public void run() {
+		//						dataModel.notifyDataSetChanged();
+		//					}
+		//				});
+		//				handler.postDelayed(this, 100);
+		//			}
+		//		});
 	}
 
 	@Override
@@ -132,6 +165,22 @@ public class RecyclerExampleController
 		recycler.invalidateLayoutManager();
 	}
 
+	private static class FloatRenderer
+			extends ItemRenderer<Float> {
+
+		@ViewIdentifier(viewId = R.id.ExampleLabel)
+		TextView exampleLabel;
+
+		public FloatRenderer() {
+			super(R.layout.list_node__recycler_example_float);
+		}
+
+		@Override
+		protected void renderItem(Float item) {
+			exampleLabel.setText("" + item);
+		}
+	}
+
 	private static class DoubleRenderer
 			extends ItemRenderer<Double> {
 
@@ -139,13 +188,12 @@ public class RecyclerExampleController
 		TextView exampleLabel;
 
 		public DoubleRenderer() {
-			super(R.layout.list_node__recycler_example);
+			super(R.layout.list_node__recycler_example_double);
 		}
 
 		@Override
 		protected void renderItem(Double item) {
 			exampleLabel.setText("" + item);
-			exampleLabel.getBackground().setColorFilter(getResources().getColor(android.R.color.darker_gray), Mode.MULTIPLY);
 		}
 	}
 
@@ -156,7 +204,7 @@ public class RecyclerExampleController
 		TextView exampleLabel;
 
 		public IntegerRenderer() {
-			super(R.layout.list_node__recycler_example);
+			super(R.layout.list_node__recycler_example_int);
 		}
 
 		@Override
