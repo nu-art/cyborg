@@ -13,4 +13,5 @@
     <string name="ExampleLabel_Storage">Storage Example</string>
     <string name="ExampleLabel_Recycler">Recycler Example\n&amp; Stateful Complex Object </string>
     <string name="ExampleLabel_EventDispatching">Event Dispatching Example</string>
+    <string name="ExampleLabel_Stack">Dynamic Controllers Stack Example</string>
 </resources>

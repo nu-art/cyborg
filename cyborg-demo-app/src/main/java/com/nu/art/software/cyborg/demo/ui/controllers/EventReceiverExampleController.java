@@ -6,10 +6,12 @@ import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.demo.R;
 import com.nu.art.software.cyborg.demo.ui.controllers.EventDispatcherExampleController.TextEventListener;
+import com.nu.art.software.reflection.annotations.ReflectiveInitialization;
 
 /**
  * Created by TacB0sS on 16-Jun 2015.
  */
+@ReflectiveInitialization
 public class EventReceiverExampleController
 		extends CyborgController
 		implements TextEventListener {
