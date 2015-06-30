@@ -12,7 +12,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import com.nu.art.software.core.generics.Processor;
 import com.nu.art.software.cyborg.annotations.Restorable;
 import com.nu.art.software.cyborg.annotations.ViewIdentifier;
 import com.nu.art.software.cyborg.common.consts.ViewListener;
@@ -39,11 +38,11 @@ public class DynamicStackExampleController
 
 	private String notToSave;
 
-	private String currentStackTag;
-
 	private static final String RightPane = "RightPane";
 
 	private static final String LeftPane = "LeftPane";
+
+	private StackManagerEventListener stack;
 
 	public DynamicStackExampleController() {
 		super(R.layout.v1_controller__stack_example);
@@ -51,7 +50,7 @@ public class DynamicStackExampleController
 
 	@Override
 	public void onCreate() {
-		currentStackTag = RightPane;
+		stack = getController(StackManagerEventListener.class, RightPane);
 		updateStackLabel();
 	}
 
@@ -60,7 +59,7 @@ public class DynamicStackExampleController
 
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		currentStackTag = !isChecked ? RightPane : LeftPane;
+		stack = getController(StackManagerEventListener.class, !isChecked ? RightPane : LeftPane);
 	}
 
 	int counter;
@@ -70,40 +69,19 @@ public class DynamicStackExampleController
 		counter++;
 		switch (v.getId()) {
 			case R.id.AddA:
-				dispatchEvent(StackManagerEventListener.class, new Processor<StackManagerEventListener>() {
-					@Override
-					public void process(StackManagerEventListener toProcess) {
-						toProcess.push(currentStackTag, "TagA-" + counter, DynamicAFragmentController.class, true);
-					}
-				});
+				stack.push("TagA-" + counter, DynamicAFragmentController.class, true);
 				break;
 			case R.id.AddB:
-				dispatchEvent(StackManagerEventListener.class, new Processor<StackManagerEventListener>() {
-					@Override
-					public void process(StackManagerEventListener toProcess) {
-						toProcess.push(currentStackTag, "TagB-" + counter, DynamicBFragmentController.class, true);
-					}
-				});
+				stack.push("TagB-" + counter, R.layout.v1_controller__dynamic_b, true);
 				break;
 			case R.id.AddC:
-				dispatchEvent(StackManagerEventListener.class, new Processor<StackManagerEventListener>() {
-					@Override
-					public void process(StackManagerEventListener toProcess) {
-						toProcess.push(currentStackTag, "TagC-" + counter, DynamicCFragmentController.class, true);
-					}
-				});
+				stack.push("TagC-" + counter, R.layout.v1_activity__recycler_example, true);
 				break;
 		}
 	}
 
 	@Override
 	public boolean onBackPressed() {
-		dispatchEvent(StackManagerEventListener.class, new Processor<StackManagerEventListener>() {
-			@Override
-			public void process(StackManagerEventListener toProcess) {
-				toProcess.popLast(currentStackTag);
-			}
-		});
-		return true;
+		return stack.popLast();
 	}
 }
