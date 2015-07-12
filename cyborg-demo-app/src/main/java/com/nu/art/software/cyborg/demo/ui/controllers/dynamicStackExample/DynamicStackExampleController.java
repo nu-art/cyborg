@@ -28,7 +28,7 @@ public class DynamicStackExampleController
 	private View[] views;
 
 	@ViewIdentifier(viewId = R.id.ControllerStackLabel)
-	private TextView fragmentStack;
+	private TextView stackList;
 
 	@ViewIdentifier(viewId = R.id.AddToLeftStack, listeners = ViewListener.OnCheckChanged)
 	private CheckBox addToLeftStack;
@@ -55,6 +55,11 @@ public class DynamicStackExampleController
 	}
 
 	private void updateStackLabel() {
+		String stackAsString = stack.getStateTag() + "\n";
+		for (String tag : stack.getStackListTags()) {
+			stackAsString += tag + "\n";
+		}
+		stackList.setText(stackAsString);
 	}
 
 	@Override
@@ -78,10 +83,13 @@ public class DynamicStackExampleController
 				stack.push("TagC-" + counter, R.layout.v1_activity__recycler_example, true);
 				break;
 		}
+		updateStackLabel();
 	}
 
 	@Override
 	public boolean onBackPressed() {
-		return stack.popLast();
+		boolean b = stack.popLast();
+		updateStackLabel();
+		return b;
 	}
 }
