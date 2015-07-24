@@ -33,42 +33,65 @@
             android:text="Add C"/>
     </LinearLayout>
 
-    <LinearLayout
+    <Spinner
+        android:id="@+id/AnimationSelector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/AddToLeftStack"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="Add To Left Stack"/>
-
-    </LinearLayout>
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.nu.art.software.cyborg.core.CyborgView
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:controller="com.nu.art.software.cyborg.core.CyborgStackController"
-            app:tag="LeftPane"/>
+            android:orientation="vertical">
 
-        <com.nu.art.software.cyborg.core.CyborgView
+            <CheckBox
+                android:id="@+id/AddToLeftStack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:text=""/>
+
+            <com.nu.art.software.cyborg.core.CyborgView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/background_stack"
+                app:controller="com.nu.art.software.cyborg.core.CyborgStackController"
+                app:tag="LeftPane"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:controller="com.nu.art.software.cyborg.core.CyborgStackController"
-            app:tag="RightPane"/>
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/AddToRightStack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:text=""/>
+
+            <com.nu.art.software.cyborg.core.CyborgView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/background_stack"
+                app:controller="com.nu.art.software.cyborg.core.CyborgStackController"
+                app:tag="RightPane"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/ControllerStackLabel"

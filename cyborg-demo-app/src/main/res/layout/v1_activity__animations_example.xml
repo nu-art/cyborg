@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) 2015 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~  Restricted usage under Binpress license
+  ~
+  ~  For more details go to: http://cyborg.binpress.com/product/cyborg/2052
+  -->
+
+<com.nu.art.software.cyborg.core.CyborgView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    cyborg:controller="com.nu.art.software.cyborg.core.CyborgStackController"
+    cyborg:popOnBackPress="true"
+    cyborg:rootController="com.nu.art.software.cyborg.demo.ui.controllers.transitionAnimation.TransitionAnimationBeginExampleController"
+    cyborg:rootTag="AnimationBegin"
+    cyborg:tag="AnimationTransition"/>
