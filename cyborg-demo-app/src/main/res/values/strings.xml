@@ -15,4 +15,5 @@
     <string name="ExampleLabel_EventDispatching">Event Dispatching Example</string>
     <string name="ExampleLabel_Stack">Dynamic Controllers Stack Example</string>
     <string name="ExampleLabel_Animations">Animations</string>
+    <string name="ExampleLabel_MatrixTester">Matrix Tester</string>
 </resources>

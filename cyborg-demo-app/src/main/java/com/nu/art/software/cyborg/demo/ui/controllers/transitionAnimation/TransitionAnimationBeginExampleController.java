@@ -10,9 +10,9 @@ import com.nu.art.software.cyborg.common.consts.ViewListener;
 import com.nu.art.software.cyborg.core.CyborgController;
 import com.nu.art.software.cyborg.core.interfaces.StackManagerEventListener;
 import com.nu.art.software.cyborg.demo.R;
-import com.nu.art.software.cyborg.ui.animations.LeadingViewAnimationBuilder;
-import com.nu.art.software.cyborg.ui.animations.LeadingViewAnimationBuilder.ViewGenerator;
-import com.nu.art.software.cyborg.ui.animations.LeadingViewAnimationBuilder.ViewResolver;
+import com.nu.art.software.cyborg.ui.animations.viewBasedAnimations.LeadingViewAnimationBuilder;
+import com.nu.art.software.cyborg.ui.animations.viewBasedAnimations.LeadingViewAnimationBuilder.ViewGenerator;
+import com.nu.art.software.cyborg.ui.animations.viewBasedAnimations.LeadingViewAnimationBuilder.ViewResolver;
 
 /**
  * Created by TacB0sS on 14-Jul 2015.

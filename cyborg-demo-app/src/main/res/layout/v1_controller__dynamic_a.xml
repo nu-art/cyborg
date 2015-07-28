@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="A"
+        android:text="A Screen"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 </RelativeLayout>

@@ -11,6 +11,7 @@ public enum Example {
 	Recycler(R.string.ExampleLabel_Recycler, R.layout.v1_activity__recycler_example), //
 	EventDispatching(R.string.ExampleLabel_EventDispatching, R.layout.v1_activity__event_dispatching_example), //
 	Stack(R.string.ExampleLabel_Stack, R.layout.v1_activity__dynamic_controllers_stack_example), //
+	MatrixTester(R.string.ExampleLabel_MatrixTester, R.layout.v1_activity__matrix_tester_example), //
 	Animations(R.string.ExampleLabel_Animations, R.layout.v1_activity__animations_example), //
 	;
 
