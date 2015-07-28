@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:cyborg="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
@@ -56,9 +56,9 @@
             android:id="@+id/ReverseCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reverse\nDirection"
             android:layout_gravity="center"
-            android:checked="false"/>
+            android:checked="false"
+            android:text="Reverse\nDirection"/>
     </LinearLayout>
 
     <LinearLayout
@@ -85,8 +85,9 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/background_stack"
-                app:controller="com.nu.art.software.cyborg.core.CyborgStackController"
-                app:tag="LeftPane"/>
+                cyborg:controller="com.nu.art.software.cyborg.core.CyborgStackController"
+                cyborg:tag="LeftPane"
+                cyborg:transition="Cube"/>
 
         </LinearLayout>
 
@@ -109,11 +110,11 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/background_stack"
-                app:controller="com.nu.art.software.cyborg.core.CyborgStackController"
-                app:rootLayoutId="@layout/v1_controller__dynamic_b"
-                app:rootTag="rootTag"
-                app:tag="RightPane"
-                app:transitionDuration="1000"/>
+                cyborg:controller="com.nu.art.software.cyborg.core.CyborgStackController"
+                cyborg:rootLayoutId="@layout/v1_controller__dynamic_b"
+                cyborg:rootTag="rootTag"
+                cyborg:tag="RightPane"
+                cyborg:transitionDuration="1000"/>
 
         </LinearLayout>
 

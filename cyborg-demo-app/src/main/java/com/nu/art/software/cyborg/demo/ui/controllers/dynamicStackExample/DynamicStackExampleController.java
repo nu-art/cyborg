@@ -173,15 +173,18 @@ public class DynamicStackExampleController
 	@Override
 	public void onClick(View v) {
 		counter++;
+		AnimationTransition animationTransition = new AnimationTransition(getActivity(), selectedAnimation, selectedOrientation, reverse);
+		if (selectedAnimation == PredefinedAnimations.None)
+			animationTransition = null;
 		switch (v.getId()) {
 			case R.id.AddA:
-				stack.push("TagA-" + counter, DynamicAFragmentController.class, new AnimationTransition(getActivity(), selectedAnimation, selectedOrientation, reverse), true);
+				stack.push("TagA-" + counter, DynamicAFragmentController.class, animationTransition, true);
 				break;
 			case R.id.AddB:
-				stack.push("TagB-" + counter, R.layout.v1_controller__dynamic_b, true);
+				stack.push("TagB-" + counter, R.layout.v1_controller__dynamic_b, animationTransition, true);
 				break;
 			case R.id.AddC:
-				stack.push("TagC-" + counter, R.layout.v1_activity__recycler_example, true);
+				stack.push("TagC-" + counter, R.layout.v1_activity__recycler_example, animationTransition, true);
 				break;
 		}
 		updateStackLabel();

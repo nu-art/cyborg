@@ -22,7 +22,7 @@ public class CyborgDemoApplication
 		super.onCreate();
 		//		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__injection_example));
 		//		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__matrix_tester_example, MyModulePack.class));
-		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__dynamic_controllers_stack_example, MyModulePack.class));
-		//		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__examples_selection, MyModulePack.class));
+		//		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__dynamic_controllers_stack_example, MyModulePack.class));
+		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.v1_activity__examples_selection, MyModulePack.class));
 	}
 }
