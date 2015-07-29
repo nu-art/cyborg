@@ -14,3 +14,7 @@
 	path = cyborg-core
 	url = https://TacB0sS@bitbucket.org/nu-art-cyborg/cyborg-core.git
 	branch = Cyborg-Demo
+[submodule "cyborg-demo-app"]
+	path = cyborg-demo-app
+	url = https://TacB0sS@bitbucket.org/nu-art-cyborg/demo-app.git
+	branch = master
