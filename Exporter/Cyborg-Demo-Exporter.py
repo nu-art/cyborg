@@ -4,6 +4,8 @@ import re
 import os
 import shutil
 
+automation = False
+
 
 def query_yes_no(question, default="yes"):
     """Ask a yes/no question via raw_input() and return their answer.
@@ -147,7 +149,7 @@ def makeAndroidStudioArchive():
 
     outputFolderName = "/home/tacb0ss/Cloud/Dropbox/Projects/Cyborg Demo/SDKs Releases/%s" % cyborgCoreVersion
     outputFileName = "%s/Cyborg-for-Android_v%s" % (outputFolderName, cyborgCoreVersion)
-    if os.path.exists(outputFolderName):
+    if not automation and os.path.exists(outputFolderName):
         if not query_yes_no("Version %s already exported... Override???" % cyborgCoreVersion, None):
             return
     else:
@@ -176,6 +178,9 @@ def makeAndroidStudioArchive():
     clearTemplateProject(templateModuleFolder)
     print("Output Zip: " + outputFileName)
 
+    if automation:
+        return
+
     if not query_yes_no("Would you like to add release notes???", None):
         return
 
@@ -185,10 +190,12 @@ def makeAndroidStudioArchive():
         f.write(releaseNotes)
 
 
-def main():
+def main(argv):
     print("Exporting Android Studio version")
+    if len(argv) > 0:
+        automation = argv[0]
     makeAndroidStudioArchive()
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])
