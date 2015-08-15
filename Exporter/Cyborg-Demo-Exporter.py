@@ -193,7 +193,7 @@ def makeAndroidStudioArchive():
 def main(argv):
     print("Exporting Android Studio version")
     if len(argv) > 0:
-        automation = argv[0]
+        automation = argv[0] == "True"
     makeAndroidStudioArchive()
 
 
