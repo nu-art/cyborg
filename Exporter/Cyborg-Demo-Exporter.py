@@ -177,7 +177,7 @@ def makeAndroidStudioArchive():
     shutil.make_archive(outputFileName, 'zip', "./", base_dir=sdkExporterFolderName)
     os.remove(demoAppApkFile)
     clearTemplateProject(templateModuleFolder)
-    print("Output Zip: " + outputFileName)
+    print("Output Zip: " + outputFileName + ".zip")
 
     if automation:
         return
