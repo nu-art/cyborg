@@ -137,8 +137,8 @@ def makeAndroidStudioArchive():
     demoAppName = "cyborg-demo-app"
     templateModuleFolder = "%s/%s" % (templateProjectFolder, demoAppName)
     libsFolder, srcFolder = clearTemplateProject(templateModuleFolder)
-    cyborgCoreAAR, cyborgCoreVersion, cyborgCoreJavadoc = copyAAR("cyborg-core", libsFolder)
-    cyborgCoreVersion = addPreZeros(cyborgCoreVersion)
+    cyborgCoreAAR, originalCyborgCoreVersion, cyborgCoreJavadoc = copyAAR("cyborg-core", libsFolder)
+    cyborgCoreVersion = addPreZeros(originalCyborgCoreVersion)
 
     nuArtCoreJar = copyJar("nu-art-core", libsFolder)
     nuArtReflectionJar = copyJar("reflection", libsFolder)
@@ -169,7 +169,7 @@ def makeAndroidStudioArchive():
 
     demoAppApkFile = sdkExporterFolder + "/Cyborg-for-Android-Demo v%s.apk" % cyborgCoreVersion
     if os.path.exists(cyborgCoreJavadoc):
-        cyborgCodeJavadocTarget = "%s/cyborg-core-v%s-javadoc.jar" % (sdkExporterFolder, cyborgCoreVersion)
+        cyborgCodeJavadocTarget = "%s/cyborg-core-v%s-javadoc.jar" % (sdkExporterFolder, originalCyborgCoreVersion)
         print("copying cyborg javadoc " + cyborgCoreJavadoc + " ==> " + cyborgCodeJavadocTarget)
         shutil.copyfile(cyborgCoreJavadoc, cyborgCodeJavadocTarget)
 
