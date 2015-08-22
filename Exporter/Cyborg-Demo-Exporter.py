@@ -173,7 +173,7 @@ def makeAndroidStudioArchive():
         print("copying cyborg javadoc " + cyborgCoreJavadoc + " ==> " + cyborgCodeJavadocTarget)
         shutil.copyfile(cyborgCoreJavadoc, cyborgCodeJavadocTarget)
     else:
-        print("os.path.curdir: " + os.path.curdir)
+        print("os.path.curdir: " + os.getcwd())
         print("did not find javadoc file: " + cyborgCoreJavadoc)
 
     shutil.copyfile("../%s/build/outputs/apk/Cyborg-for-Android-Demo v%s.apk" % (demoAppName, demoAppVersion), demoAppApkFile)
