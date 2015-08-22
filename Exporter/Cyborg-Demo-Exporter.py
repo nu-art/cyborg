@@ -169,7 +169,7 @@ def makeAndroidStudioArchive():
 
     demoAppApkFile = sdkExporterFolder + "/Cyborg-for-Android-Demo v%s.apk" % cyborgCoreVersion
     if os.path.exists(cyborgCoreJavadoc):
-        shutil.copyfile(cyborgCoreJavadoc, "%s/cyborg-core-v%s-javadoc.jar" % (outputFolderName, cyborgCoreVersion))
+        shutil.copyfile(cyborgCoreJavadoc, "%s/cyborg-core-v%s-javadoc.jar" % (sdkExporterFolder, cyborgCoreVersion))
     shutil.copyfile("../%s/build/outputs/apk/Cyborg-for-Android-Demo v%s.apk" % (demoAppName, demoAppVersion), demoAppApkFile)
     shutil.copyfile("../%s/build/outputs/apk/Cyborg-for-Android-Demo v%s.apk" % (demoAppName, demoAppVersion),
                     "%s/Cyborg-for-Android v%s.apk" % (outputFolderName, cyborgCoreVersion))
