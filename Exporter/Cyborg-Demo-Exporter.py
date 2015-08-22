@@ -112,7 +112,8 @@ def copyAAR(moduleName, targetFolder):
 
     fileName = moduleName + "-" + moduleVersion
     shutil.copyfile(fileToCopy, targetFolder + "/" + fileName + ".aar")
-    return fileName, moduleVersion
+    pathToJavadoc = "../%s/build/doc/%s-%s-javadoc.jar" % (moduleName, moduleName, moduleVersion)
+    return fileName, moduleVersion, pathToJavadoc
 
 
 def addPreZeros(sdkVersion):
@@ -136,15 +137,12 @@ def makeAndroidStudioArchive():
     demoAppName = "cyborg-demo-app"
     templateModuleFolder = "%s/%s" % (templateProjectFolder, demoAppName)
     libsFolder, srcFolder = clearTemplateProject(templateModuleFolder)
-    cyborgCoreAAR, cyborgCoreVersion = copyAAR("cyborg-core", libsFolder)
+    cyborgCoreAAR, cyborgCoreVersion, cyborgCoreJavadoc = copyAAR("cyborg-core", libsFolder)
     cyborgCoreVersion = addPreZeros(cyborgCoreVersion)
 
     nuArtCoreJar = copyJar("nu-art-core", libsFolder)
     nuArtReflectionJar = copyJar("reflection", libsFolder)
     nuArtModuleManagerJar = copyJar("module-manager", libsFolder)
-    # nuArtArchiverJar = copyJar("archiver", libsFolder)
-    # imageCurlEffectAAR, imageCurlEffectVersion = copyAAR("image-curl-effect", libsFolder)
-    # nuArtPdfSdkAAR, cyborgCoreVersion = copyAAR("nu-art-pdf-sdk", libsFolder)
     demoAppVersion = getAARVersion(demoAppName)
 
     outputFolderName = "/home/tacb0ss/Cloud/Dropbox/Projects/Cyborg Demo/SDKs Releases/%s" % cyborgCoreVersion
@@ -170,6 +168,8 @@ def makeAndroidStudioArchive():
         f.write(data)
 
     demoAppApkFile = sdkExporterFolder + "/Cyborg-for-Android-Demo v%s.apk" % cyborgCoreVersion
+    if os.path.exists(cyborgCoreJavadoc):
+        shutil.copyfile(cyborgCoreJavadoc, "%s/cyborg-core-v%s-javadoc.jar" % (outputFolderName, cyborgCoreVersion))
     shutil.copyfile("../%s/build/outputs/apk/Cyborg-for-Android-Demo v%s.apk" % (demoAppName, demoAppVersion), demoAppApkFile)
     shutil.copyfile("../%s/build/outputs/apk/Cyborg-for-Android-Demo v%s.apk" % (demoAppName, demoAppVersion),
                     "%s/Cyborg-for-Android v%s.apk" % (outputFolderName, cyborgCoreVersion))
