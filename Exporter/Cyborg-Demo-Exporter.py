@@ -153,6 +153,7 @@ def makeAndroidStudioArchive():
         else:
             tempIndex = 0
             while True:
+                tempIndex += 1
                 alternateOutputPath = outputFolderName + "_" + str(tempIndex)
                 if not os.path.exists(alternateOutputPath):
                     outputFolderName = alternateOutputPath
