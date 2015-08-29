@@ -151,6 +151,14 @@ def makeAndroidStudioArchive():
         if not automation:
             if not query_yes_no("Version %s already exported... Override???" % cyborgCoreVersion, None):
                 return
+        else:
+            tempIndex = 0
+            while True:
+                alternateOutputPath = outputFolderName + "_" + tempIndex
+                if not os.path.exists(alternateOutputPath):
+                    outputFolderName = alternateOutputPath
+                    os.makedirs(outputFolderName)
+                    break
     else:
         os.makedirs(outputFolderName)
 
