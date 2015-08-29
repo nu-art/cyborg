@@ -146,7 +146,6 @@ def makeAndroidStudioArchive():
     demoAppVersion = getAARVersion(demoAppName)
 
     outputFolderName = "/home/tacb0ss/Cloud/Dropbox/Projects/Cyborg Demo/SDKs Releases/%s" % cyborgCoreVersion
-    outputFileName = "%s/Cyborg-for-Android_v%s" % (outputFolderName, cyborgCoreVersion)
     if os.path.exists(outputFolderName):
         if not automation:
             if not query_yes_no("Version %s already exported... Override???" % cyborgCoreVersion, None):
@@ -162,6 +161,7 @@ def makeAndroidStudioArchive():
     else:
         os.makedirs(outputFolderName)
 
+    outputFileName = "%s/Cyborg-for-Android_v%s" % (outputFolderName, cyborgCoreVersion)
     dependencies = [cyborgCoreAAR]
     aarImport = ""
     for dependency in dependencies:
