@@ -1,1 +1,7 @@
-include ':cyborg-demo-app', ':nu-art-core', ':reflection', ':module-manager', ':cyborg-core'
+rootProject.name = 'cyborg-dev-project'
+
+include ':nu-art-core'
+include ':reflection'
+include ':module-manager'
+include ':cyborg-core'
+include ':cyborg-demo-app'
