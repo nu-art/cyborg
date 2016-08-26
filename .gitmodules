@@ -14,10 +14,6 @@
 	path = cyborg-core
 	url = https://bitbucket.org/nu-art-cyborg/cyborg-core.git
 	branch = Cyborg-Demo
-[submodule "cyborg-demo-app"]
-	path = cyborg-demo-app
-	url = https://bitbucket.org/nu-art-cyborg/demo-app.git
-	branch = master
 [submodule "payment-core"]
 	path = payment-core
 	url = ./payment-core
