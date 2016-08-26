@@ -16,13 +16,13 @@
 	branch = Cyborg-Demo
 [submodule "payment-core"]
 	path = payment-core
-	url = ./payment-core
+	url = https://bitbucket.org/nu-art-cyborg/payment-core.git
 [submodule "payment-stripe"]
 	path = payment-stripe
-	url = ./payment-stripe/
+	url = https://bitbucket.org/nu-art-cyborg/payment-stripe.git
 [submodule "notifications"]
 	path = notifications
-	url = ./notifications/
+	url = https://bitbucket.org/nu-art-cyborg/notifications.git
 [submodule "cyborg-demo-app"]
 	path = cyborg-demo-app
-	url = ./cyborg-demo-app
+	url = https://bitbucket.org/nu-art-cyborg/cyborg-demo-app.git
