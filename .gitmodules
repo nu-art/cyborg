@@ -26,3 +26,6 @@
 [submodule "cyborg-demo-app"]
 	path = cyborg-demo-app
 	url = https://bitbucket.org/nu-art-cyborg/cyborg-demo-app.git
+[submodule "dev-tools"]
+	path = dev-tools
+	url = git@bitbucket.org:nu-art-core/dev-tools.git
