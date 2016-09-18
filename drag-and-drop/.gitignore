@@ -2,9 +2,8 @@
 /local.properties
 .DS_Store
 /build
+/captures
 /.idea
 gradle
-*.iml
 target
-/projectFilesBackup*
-*/**/build
+*.iml

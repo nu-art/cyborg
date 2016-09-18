@@ -7,4 +7,12 @@
  *
  * Email: Adam.Zehavi@Nu-Art-Software.com
  */
-include ':cyborg-demo-app'
+
+package com.nu.art.cyborg.speechRecognition;
+
+enum SpeechRecognitionState {
+	Idle,
+	Preparing,
+	Prepared,
+	Recording
+}

@@ -1,8 +1,11 @@
 /*
- * Copyright (c) 2015 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
- * Restricted usage under Binpress license
+ * Copyright (c) 2017 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
  *
- * For more details go to: http://cyborg.binpress.com/product/cyborg/2052
+ * This software code is not an 'Open Source'!
+ * In order to use this code you MUST have a proper license.
+ * In order to obtain a licence please contact me directly.
+ *
+ * Email: Adam.Zehavi@Nu-Art-Software.com
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -11,7 +14,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.1.3'
     }
 }
 
