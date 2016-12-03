@@ -32,10 +32,6 @@ import static com.nu.art.cyborg.speechRecognition.SpeechRecognitionState.Prepare
 import static com.nu.art.cyborg.speechRecognition.SpeechRecognitionState.Preparing;
 import static com.nu.art.cyborg.speechRecognition.SpeechRecognitionState.Recording;
 
-/**
- * Sensiya - iAm+
- * Created by Shahar on 11-Jul 2016.
- */
 public class SpeechRecognitionModule
 		extends CyborgModule {
 

@@ -73,6 +73,5 @@ android.libraryVariants.all { variant ->
 }
 
 dependencies {
-    compile 'com.stripe:stripe-android:+'
     compile project(path: ':cyborg-core')
 }
