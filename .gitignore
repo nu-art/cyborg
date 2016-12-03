@@ -3,7 +3,7 @@
 .DS_Store
 /build
 /.idea
-gradle
+/gradle
 *.iml
 target
 /projectFilesBackup*
