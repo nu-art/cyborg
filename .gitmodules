@@ -1,41 +1,41 @@
 [submodule "cyborg-core"]
 	path = cyborg-core 
-	url = git@bitbucket.org:nu-art-cyborg/cyborg-core.git  
+	url = git@bitbucket.org:nu-art-cyborg/cyborg-core.git 
 	branch =  master 
 [submodule "cyborg-demo-app"]
 	path = cyborg-demo-app 
-	url = git@bitbucket.org:nu-art-cyborg/cyborg-demo-app.git  
+	url = git@bitbucket.org:nu-art-cyborg/cyborg-demo-app.git 
 	branch =  master 
 [submodule "dev-tools"]
 	path = dev-tools 
-	url = git@bitbucket.org:nu-art-core/dev-tools.git  
+	url = git@bitbucket.org:nu-art-core/dev-tools.git 
 	branch =  master 
-[submodule "generic-action-processor"]
-	path = generic-action-processor 
-	url = git@bitbucket.org:nu-art-core/generic-action-processor.git  
+[submodule "generic-processor"]
+	path = generic-processor 
+	url = git@bitbucket.org:nu-art-core/generic-processor.git 
 	branch =  master 
 [submodule "module-manager"]
 	path = module-manager 
-	url = git@bitbucket.org:nu-art-core/module-manager.git  
+	url = git@bitbucket.org:nu-art-core/module-manager.git 
 	branch =  master 
 [submodule "notifications"]
 	path = notifications 
-	url = git@bitbucket.org:nu-art-cyborg/notifications.git  
+	url = git@bitbucket.org:nu-art-cyborg/notifications.git 
 	branch =  master 
 [submodule "nu-art-core"]
 	path = nu-art-core 
-	url = git@bitbucket.org:nu-art-core/nu-art-core.git  
+	url = git@bitbucket.org:nu-art-core/nu-art-core.git 
 	branch =  master 
 [submodule "payment-core"]
 	path = payment-core 
-	url = git@bitbucket.org:nu-art-cyborg/payment-core.git  
+	url = git@bitbucket.org:nu-art-cyborg/payment-core.git 
 	branch =  master 
 [submodule "payment-stripe"]
 	path = payment-stripe 
-	url = git@bitbucket.org:nu-art-cyborg/payment-stripe.git  
+	url = git@bitbucket.org:nu-art-cyborg/payment-stripe.git 
 	branch =  master 
 [submodule "reflection"]
 	path = reflection 
-	url = git@bitbucket.org:nu-art-core/reflection.git  
+	url = git@bitbucket.org:nu-art-core/reflection.git 
 	branch =  master 
 
