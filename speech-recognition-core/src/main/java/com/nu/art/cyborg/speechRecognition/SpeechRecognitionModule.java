@@ -64,7 +64,7 @@ public class SpeechRecognitionModule
 				return language.getLocale().toString();
 			}
 		};
-		ArrayList<String> supportedLanguages = new ArrayList<>(Arrays.asList(ArrayTools.map(this.supportedLanguages, String.class, mapper)));
+		ArrayList<String> supportedLanguages = new ArrayList<>(Arrays.asList(ArrayTools.map(String.class, mapper, this.supportedLanguages)));
 		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
 		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, language);
 		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, language);
