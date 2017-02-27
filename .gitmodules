@@ -1,3 +1,11 @@
+[submodule "belog"]
+	path = belog 
+	url = git@bitbucket.org:nu-art-core/belog.git 
+	branch =  master 
+[submodule "clipboard"]
+	path = clipboard 
+	url = git@bitbucket.org:nu-art-cyborg/clipboard.git 
+	branch =  master 
 [submodule "cyborg-core"]
 	path = cyborg-core 
 	url = git@bitbucket.org:nu-art-cyborg/cyborg-core.git 
@@ -13,6 +21,10 @@
 [submodule "generic-processor"]
 	path = generic-processor 
 	url = git@bitbucket.org:nu-art-core/generic-processor.git 
+	branch =  master 
+[submodule "google-analytics"]
+	path = google-analytics 
+	url = git@bitbucket.org:nu-art-cyborg/google-analytics.git 
 	branch =  master 
 [submodule "module-manager"]
 	path = module-manager 
