@@ -38,13 +38,13 @@ uploadArchives {
 
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
-    archiveName = artifact + "-v" + version + "-src.jar"
+    archiveName = artifact + "-" + version + "-src.jar"
     from sourceSets.main.allSource
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
-    archiveName = artifact + "-v" + version + "-doc.jar"
+    archiveName = artifact + "-" + version + "-doc.jar"
     from javadoc.destinationDir
 }
 
