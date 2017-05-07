@@ -1,18 +1,18 @@
 [submodule "belog"]
 	path = belog 
-	url = git@bitbucket.org:nu-art-core/belog.git 
-	branch =  master 
-[submodule "clipboard"]
-	path = clipboard 
-	url = git@bitbucket.org:nu-art-cyborg/clipboard.git 
+	url = git@github.com:nu-art/belog.git 
 	branch =  master 
 [submodule "cyborg-core"]
 	path = cyborg-core 
-	url = git@bitbucket.org:nu-art-cyborg/cyborg-core.git 
+	url = git@github.com:nu-art/cyborg-core.git 
 	branch =  master 
 [submodule "cyborg-demo-app"]
 	path = cyborg-demo-app 
 	url = git@bitbucket.org:nu-art-cyborg/cyborg-demo-app.git 
+	branch =  master 
+[submodule "cyborg-google-analytics"]
+	path = cyborg-google-analytics 
+	url = git@github.com:nu-art/cyborg-google-analytics.git 
 	branch =  master 
 [submodule "dev-tools"]
 	path = dev-tools 
@@ -20,23 +20,15 @@
 	branch =  master 
 [submodule "generic-processor"]
 	path = generic-processor 
-	url = git@bitbucket.org:nu-art-core/generic-processor.git 
-	branch =  master 
-[submodule "google-analytics"]
-	path = google-analytics 
-	url = git@bitbucket.org:nu-art-cyborg/google-analytics.git 
+	url = git@github.com:nu-art/generic-processor.git 
 	branch =  master 
 [submodule "module-manager"]
 	path = module-manager 
-	url = git@bitbucket.org:nu-art-core/module-manager.git 
-	branch =  master 
-[submodule "notifications"]
-	path = notifications 
-	url = git@bitbucket.org:nu-art-cyborg/notifications.git 
+	url = git@github.com:nu-art/module-manager.git 
 	branch =  master 
 [submodule "nu-art-core"]
 	path = nu-art-core 
-	url = git@bitbucket.org:nu-art-core/nu-art-core.git 
+	url = git@github.com:nu-art/nu-art-core.git 
 	branch =  master 
 [submodule "payment-core"]
 	path = payment-core 
@@ -48,6 +40,6 @@
 	branch =  master 
 [submodule "reflection"]
 	path = reflection 
-	url = git@bitbucket.org:nu-art-core/reflection.git 
+	url = git@github.com:nu-art/reflection.git 
 	branch =  master 
 

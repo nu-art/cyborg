@@ -7,12 +7,12 @@
 
 package com.nu.art.http;
 
-import com.nu.art.belogged.Logger;
-import com.nu.art.software.core.generics.Processor;
-import com.nu.art.software.core.interfaces.ILogger;
-import com.nu.art.software.core.tools.ArrayTools;
-import com.nu.art.software.core.utils.PoolQueue;
-import com.nu.art.software.modular.core.Module;
+import com.nu.art.belog.Logger;
+import com.nu.art.core.generics.Processor;
+import com.nu.art.core.interfaces.ILogger;
+import com.nu.art.core.tools.ArrayTools;
+import com.nu.art.core.utils.PoolQueue;
+import com.nu.art.modular.core.Module;
 
 import java.io.IOException;
 import java.io.InputStream;

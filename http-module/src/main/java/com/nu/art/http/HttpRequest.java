@@ -8,8 +8,8 @@
 package com.nu.art.http;
 
 import com.nu.art.http.consts.HttpMethod;
-import com.nu.art.software.core.exceptions.runtime.BadImplementationException;
-import com.nu.art.software.core.interfaces.ILogger;
+import com.nu.art.core.exceptions.runtime.BadImplementationException;
+import com.nu.art.core.interfaces.ILogger;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

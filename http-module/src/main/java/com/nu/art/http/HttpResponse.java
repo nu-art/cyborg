@@ -3,7 +3,7 @@ package com.nu.art.http;
 import com.nu.art.http.headers.ContentType;
 import com.nu.art.http.headers.EncodingType;
 import com.nu.art.http.interfaces.HeaderType;
-import com.nu.art.software.core.interfaces.ILogger;
+import com.nu.art.core.interfaces.ILogger;
 
 import java.io.IOException;
 import java.io.InputStream;

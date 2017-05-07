@@ -7,8 +7,8 @@
 
 package com.nu.art.http;
 
-import com.nu.art.software.core.exceptions.runtime.ImplementationMissingException;
-import com.nu.art.software.core.tools.StreamTools;
+import com.nu.art.core.exceptions.runtime.ImplementationMissingException;
+import com.nu.art.core.tools.StreamTools;
 
 import java.io.IOException;
 import java.io.InputStream;

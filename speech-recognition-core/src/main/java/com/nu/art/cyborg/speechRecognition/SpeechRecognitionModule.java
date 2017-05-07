@@ -16,13 +16,13 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 
-import com.nu.art.software.core.constants.language.Language;
-import com.nu.art.software.core.generics.Function;
-import com.nu.art.software.core.generics.Processor;
-import com.nu.art.software.core.tools.ArrayTools;
-import com.nu.art.software.core.tools.DateTimeTools;
-import com.nu.art.software.core.tools.MathTools;
-import com.nu.art.software.cyborg.core.CyborgModule;
+import com.nu.art.core.constants.language.Language;
+import com.nu.art.core.generics.Function;
+import com.nu.art.core.generics.Processor;
+import com.nu.art.core.tools.ArrayTools;
+import com.nu.art.core.tools.DateTimeTools;
+import com.nu.art.core.tools.MathTools;
+import com.nu.art.cyborg.core.CyborgModule;
 
 import java.util.ArrayList;
 import java.util.Arrays;
