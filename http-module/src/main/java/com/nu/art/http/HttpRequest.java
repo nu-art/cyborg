@@ -39,7 +39,7 @@ public abstract class HttpRequest
 
 	InputStream inputStream;
 
-	Vector<HttpKeyValue> headers = new Vector<>();
+	private Vector<HttpKeyValue> headers = new Vector<>();
 
 	HttpRequest() {
 		addHeader("accept-encoding", "gzip");

@@ -17,7 +17,7 @@ import java.util.zip.GZIPInputStream;
  * Created by TacB0sS on 08-Mar 2017.
  */
 
-public class HttpResponse {
+public class 	HttpResponse {
 
 	int responseCode;
 
