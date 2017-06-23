@@ -13,13 +13,6 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url = RepoURL
-            credentials {
-                username RepoAccountName
-                password RepoAccountPassword
-            }
-        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
@@ -32,12 +25,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            credentials {
-                username RepoAccountName
-                password RepoAccountPassword
-            }
-            url = RepoURL
-        }
     }
+}
+
+subprojects {
+    apply from: '../dev-tools/gradle/deploy-to-central.gradle'
+    apply from: '../dev-tools/gradle/version-bump.gradle'
 }
