@@ -22,6 +22,10 @@
 	path = generic-processor 
 	url = git@github.com:nu-art/generic-processor.git 
 	branch =  master 
+[submodule "http-module"]
+	path = http-module 
+	url = ssh://git@bitbucket.org/nu-art-core/http-module.git 
+	branch =  master 
 [submodule "module-manager"]
 	path = module-manager 
 	url = git@github.com:nu-art/module-manager.git 
