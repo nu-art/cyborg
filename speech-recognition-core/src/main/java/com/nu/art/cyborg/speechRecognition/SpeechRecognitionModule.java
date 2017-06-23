@@ -53,7 +53,7 @@ public class SpeechRecognitionModule
 	protected void init() {
 		mRecordingProcessor = new RecordingProcessor();
 		listener = new SpeechListener();
-		mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(getApplication());
+		mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
 		mSpeechRecognizer.setRecognitionListener(listener);
 		mRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 
@@ -71,7 +71,7 @@ public class SpeechRecognitionModule
 		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_SUPPORTED_LANGUAGES, supportedLanguages);
 		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true);
 		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, language);
-		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getApplication().getPackageName());
+		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getApplicationContext().getPackageName());
 		mRecognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3);
 	}
 
