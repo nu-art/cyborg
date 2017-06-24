@@ -24,7 +24,7 @@
 	branch =  master 
 [submodule "http-module"]
 	path = http-module 
-	url = ssh://git@bitbucket.org/nu-art-core/http-module.git 
+	url = git@github.com:nu-art/http-module.git 
 	branch =  master 
 [submodule "module-manager"]
 	path = module-manager 
