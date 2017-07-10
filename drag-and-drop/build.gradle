@@ -11,65 +11,12 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "25.0.3"
-
-    lintOptions {
-        abortOnError false
-    }
-
-    defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 23
-        versionName "1.0.0"
-        project.version = versionName
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }
-
-    libraryVariants.all { variant ->
-        variant.outputs.each { output ->
-            def outputFile = output.outputFile
-            if (outputFile != null && outputFile.name.endsWith('.aar')) {
-                def fileName = "${archivesBaseName}-v${version}.aar"
-                output.outputFile = new File(outputFile.parent, fileName)
-            }
-        }
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-        }
-    }
-
+    apply from: '../dev-tools/gradle/common-cyborg-lib.gradle'
 }
 
-android.libraryVariants.all { variant ->
-    task("generate${variant.name}Javadoc", type: Javadoc) {
-        title = "Documentation for Android $android.defaultConfig.versionName b$android.defaultConfig.versionCode"
-        description "Generates Javadoc for $variant.name."
-
-        destinationDir = new File("${project.getProjectDir()}/build/doc/compiled/", variant.baseName)
-        source = variant.javaCompile.source
-        classpath = files(variant.javaCompile.classpath.files, project.android.getBootClasspath())
-
-        options {
-            links "http://docs.oracle.com/javase/7/docs/api/"
-            linksOffline "http://d.android.com/reference", "${android.sdkDirectory}/docs/reference"
-        }
-    }
-
-    task("package${variant.name.capitalize()}Javadoc", type: Jar, dependsOn: "generate${variant.name}Javadoc") {
-        description "Bundles Javadoc into zip for $variant.name."
-        classifier = "javadoc"
-        destinationDir = new File("${project.getProjectDir()}/build/doc/")
-        from tasks["generate${variant.name}Javadoc"]
-    }
-}
+//if (project.hasProperty("configureUploadJavaArtifact")) {
+//    configureUploadJavaArtifact("com.nu-art-software.core", "nu-art/${name}")
+//}
 
 dependencies {
     compile project(path: ':cyborg-core')

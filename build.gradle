@@ -31,4 +31,10 @@ allprojects {
 subprojects {
     apply from: '../dev-tools/gradle/deploy-to-central.gradle'
     apply from: '../dev-tools/gradle/version-bump.gradle'
+    apply from: '../dev-tools/gradle/utils.gradle'
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.0'
+}
+
