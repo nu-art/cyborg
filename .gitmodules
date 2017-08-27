@@ -37,7 +37,7 @@
 [submodule "payment-core"]
 	path = payment-core 
 	url = git@bitbucket.org:nu-art-cyborg/payment-core.git 
-	branch =  master 
+	branch =  test-script 
 [submodule "payment-stripe"]
 	path = payment-stripe 
 	url = git@bitbucket.org:nu-art-cyborg/payment-stripe.git 
