@@ -14,6 +14,10 @@
 	path = cyborg-google-analytics 
 	url = git@github.com:nu-art/cyborg-google-analytics.git 
 	branch =  master 
+[submodule "cyborg-maps"]
+	path = cyborg-maps 
+	url = git@github.com:nu-art/cyborg-maps.git 
+	branch =  master 
 [submodule "dev-tools"]
 	path = dev-tools 
 	url = git@bitbucket.org:nu-art-core/dev-tools.git 
@@ -37,7 +41,7 @@
 [submodule "payment-core"]
 	path = payment-core 
 	url = git@bitbucket.org:nu-art-cyborg/payment-core.git 
-	branch =  test-script 
+	branch =  master 
 [submodule "payment-stripe"]
 	path = payment-stripe 
 	url = git@bitbucket.org:nu-art-cyborg/payment-stripe.git 
