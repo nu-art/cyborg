@@ -8,3 +8,4 @@
 target
 /projectFilesBackup*
 */**/build
+/test-script.sh
