@@ -2,6 +2,10 @@
 	path = belog 
 	url = git@github.com:nu-art/belog.git 
 	branch =  master 
+[submodule "cyborg-bluetooth"]
+	path = cyborg-bluetooth 
+	url = git@github.com:nu-art/cyborg-bluetooth.git 
+	branch =  master 
 [submodule "cyborg-core"]
 	path = cyborg-core 
 	url = git@github.com:nu-art/cyborg-core.git 
@@ -9,6 +13,10 @@
 [submodule "cyborg-demo-app"]
 	path = cyborg-demo-app 
 	url = git@bitbucket.org:nu-art-cyborg/cyborg-demo-app.git 
+	branch =  master 
+[submodule "cyborg-firebase"]
+	path = cyborg-firebase 
+	url = git@github.com:nu-art/cyborg-firebase.git 
 	branch =  master 
 [submodule "cyborg-google-analytics"]
 	path = cyborg-google-analytics 
