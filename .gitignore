@@ -3,8 +3,10 @@
 .DS_Store
 /build
 /.idea
+/captures
 /gradle
 *.iml
+*.patch
 target
 /projectFilesBackup*
 */**/build
