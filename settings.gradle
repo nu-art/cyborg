@@ -19,6 +19,7 @@ include ':cyborg-bluetooth'
 include ':cyborg-firebase'
 include ':cyborg-core'
 include ':payment-core'
+
 include ':cyborg-demo-app'
 include ':cyborg-maps'
 include ':drag-and-drop'
