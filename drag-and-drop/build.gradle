@@ -19,5 +19,5 @@ android {
 //}
 
 dependencies {
-    compile project(path: ':cyborg-core')
+    compile(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
 }
