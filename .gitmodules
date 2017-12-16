@@ -28,7 +28,7 @@
 	branch =  master 
 [submodule "dev-tools"]
 	path = dev-tools 
-	url = git@bitbucket.org:nu-art-core/dev-tools.git 
+	url = git@github.com:nu-art/dev-tools.git 
 	branch =  master 
 [submodule "generic-processor"]
 	path = generic-processor 
