@@ -19,7 +19,6 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
     apply from: '../dev-tools/gradle/common-cyborg-lib.gradle'
 }
 

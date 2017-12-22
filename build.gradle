@@ -13,6 +13,10 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -28,11 +32,11 @@ allprojects {
 //        maven {
 //            url "http://maven.affectiva.com"
 //        }
-        maven {
-            url "https://maven.google.com"
-        }
-
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
@@ -45,7 +49,7 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.0'
+    gradleVersion = '3.5'
 }
 
 ext."oss-releases.username" = System.getenv('OSSRH_USER_NAME')
