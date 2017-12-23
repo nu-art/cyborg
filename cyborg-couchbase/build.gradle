@@ -27,7 +27,7 @@ if (project.hasProperty("configureUploadAndroidLibArtifact")) {
 }
 
 dependencies {
-    compile(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
-    compile 'com.couchbase.lite:couchbase-lite-android:1.3.0'
-    compile 'com.google.code.gson:gson:2.8.0'
+    _implementation(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+    _implementation 'com.couchbase.lite:couchbase-lite-android:1.3.0'
+    _implementation 'com.google.code.gson:gson:2.8.0'
 }
