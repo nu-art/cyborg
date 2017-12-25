@@ -21,7 +21,6 @@ import android.view.ViewGroup;
 
 import java.util.HashMap;
 
-
 @SuppressWarnings("unchecked")
 public class DND_Handler<ItemType> {
 

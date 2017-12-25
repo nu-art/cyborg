@@ -10,12 +10,10 @@
 
 package com.nu.art.cyborg.dnd;
 
-
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.View.OnDragListener;
-
 
 public abstract class OnDragEventListener
 		implements OnDragListener {
@@ -25,25 +23,25 @@ public abstract class OnDragEventListener
 		printAction(event);
 
 		switch (event.getAction()) {
-			case DragEvent.ACTION_DRAG_ENTERED :
+			case DragEvent.ACTION_DRAG_ENTERED:
 				return onDragEntered(v, event);
 
-			case DragEvent.ACTION_DRAG_EXITED :
+			case DragEvent.ACTION_DRAG_EXITED:
 				return onDragExited(v, event);
 
-			case DragEvent.ACTION_DRAG_STARTED :
+			case DragEvent.ACTION_DRAG_STARTED:
 				return onDragStarted(v, event);
 
-			case DragEvent.ACTION_DRAG_ENDED :
+			case DragEvent.ACTION_DRAG_ENDED:
 				return onDragEnded(v, event);
 
-			case DragEvent.ACTION_DRAG_LOCATION :
+			case DragEvent.ACTION_DRAG_LOCATION:
 				return onDragLocation(v, event);
 
-			case DragEvent.ACTION_DROP :
+			case DragEvent.ACTION_DROP:
 				return onDropped(v, event);
 
-			default :
+			default:
 				break;
 		}
 		return true;
@@ -52,25 +50,25 @@ public abstract class OnDragEventListener
 	private void printAction(DragEvent event) {
 		String log;
 		switch (event.getAction()) {
-			case DragEvent.ACTION_DRAG_ENTERED :
+			case DragEvent.ACTION_DRAG_ENTERED:
 				log = "ACTION_DRAG_ENTERED";
 				break;
-			case DragEvent.ACTION_DRAG_EXITED :
+			case DragEvent.ACTION_DRAG_EXITED:
 				log = "ACTION_DRAG_EXITED (" + event.getX() + ", " + event.getY() + ")";
 				break;
-			case DragEvent.ACTION_DRAG_STARTED :
+			case DragEvent.ACTION_DRAG_STARTED:
 				log = "ACTION_DRAG_STARTED";
 				break;
-			case DragEvent.ACTION_DRAG_ENDED :
+			case DragEvent.ACTION_DRAG_ENDED:
 				log = "ACTION_DRAG_ENDED (" + event.getX() + ", " + event.getY() + ")";
 				break;
-			case DragEvent.ACTION_DRAG_LOCATION :
+			case DragEvent.ACTION_DRAG_LOCATION:
 				log = "ACTION_DRAG_LOCATION (" + event.getX() + ", " + event.getY() + ")";
 				break;
-			case DragEvent.ACTION_DROP :
+			case DragEvent.ACTION_DROP:
 				log = "ACTION_DROP (" + event.getX() + ", " + event.getY() + ")";
 				break;
-			default :
+			default:
 				log = "UNKNOWN";
 				break;
 		}

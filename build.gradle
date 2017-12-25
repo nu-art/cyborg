@@ -49,7 +49,7 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
+    gradleVersion = '4.0'
 }
 
 ext."oss-releases.username" = System.getenv('OSSRH_USER_NAME')

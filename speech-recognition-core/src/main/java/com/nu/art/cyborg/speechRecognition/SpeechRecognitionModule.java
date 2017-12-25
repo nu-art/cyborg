@@ -279,7 +279,7 @@ public class SpeechRecognitionModule
 	}
 
 	private void dispatchOnSpeechRecognized(final String text) {
-		dispatchEvent("OnSpeechRecognized", SpeechRecognitionListener.class, new Processor<SpeechRecognitionListener>() {
+		dispatchEvent("OnSpeechRecognized", new Processor<SpeechRecognitionListener>() {
 			@Override
 			public void process(SpeechRecognitionListener listener) {
 				listener.onSpeechRecognized(text);
@@ -288,7 +288,7 @@ public class SpeechRecognitionModule
 	}
 
 	private void dispatchOnRecognizedPartialResults(final String text) {
-		dispatchEvent("OnRecognizedPartialResults", SpeechRecognitionListener.class, new Processor<SpeechRecognitionListener>() {
+		dispatchEvent("OnRecognizedPartialResults", new Processor<SpeechRecognitionListener>() {
 			@Override
 			public void process(SpeechRecognitionListener listener) {
 				listener.onRecognizedPartialResults(text);
@@ -297,7 +297,7 @@ public class SpeechRecognitionModule
 	}
 
 	private void dispatchOnRecognitionStarted() {
-		dispatchEvent("OnRecognitionStarted", SpeechRecognitionListener.class, new Processor<SpeechRecognitionListener>() {
+		dispatchEvent("OnRecognitionStarted", new Processor<SpeechRecognitionListener>() {
 			@Override
 			public void process(SpeechRecognitionListener listener) {
 				listener.onSpeechRecognitionStarted();
@@ -306,7 +306,7 @@ public class SpeechRecognitionModule
 	}
 
 	private void dispatchOnRecognitionStopped() {
-		dispatchEvent("OnRecognitionStopped", SpeechRecognitionListener.class, new Processor<SpeechRecognitionListener>() {
+		dispatchEvent("OnRecognitionStopped", new Processor<SpeechRecognitionListener>() {
 			@Override
 			public void process(SpeechRecognitionListener listener) {
 				listener.onSpeechRecognitionStopped();
@@ -315,7 +315,7 @@ public class SpeechRecognitionModule
 	}
 
 	private void dispatchOnRecognitionError(final SpeechError error) {
-		dispatchEvent("OnRecognitionError", SpeechRecognitionListener.class, new Processor<SpeechRecognitionListener>() {
+		dispatchEvent("OnRecognitionError", new Processor<SpeechRecognitionListener>() {
 			@Override
 			public void process(SpeechRecognitionListener listener) {
 				listener.onSpeechRecognitionError(error);
