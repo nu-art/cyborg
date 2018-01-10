@@ -17,8 +17,10 @@
   ~ limitations under the License.
   -->
 
-<manifest package="com.cyborg.couchbase"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.cyborg.couchbase"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
