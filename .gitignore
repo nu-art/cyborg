@@ -9,6 +9,7 @@
 *.patch
 target
 /projectFilesBackup*
+/cyborg-api-ai
 */**/build
 /test-script.sh
 */src/main/java/com/nu/art/cyborg/media/*
