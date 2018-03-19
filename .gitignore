@@ -3,6 +3,7 @@
 .DS_Store
 /build
 /.idea
+/.old
 /captures
 /gradle
 *.iml
