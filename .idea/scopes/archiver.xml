@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="archiver" pattern="file[archiver]:*/&amp;&amp;!file[archiver]:build//*" />
+</component>

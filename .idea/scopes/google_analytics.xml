@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="google-analytics" pattern="file[google-analytics]:*/&amp;&amp;!file[google-analytics]:build//*" />
+</component>

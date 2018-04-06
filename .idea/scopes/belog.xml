@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="belog" pattern="file[belog]:*/&amp;&amp;!file[belog]:build//*" />
+</component>

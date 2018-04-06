@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="generic-processor" pattern="file[generic-processor]:*/&amp;&amp;!file[generic-processor]:build//*" />
+</component>

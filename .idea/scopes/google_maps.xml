@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="google-maps" pattern="file[cyborg-maps]:*/&amp;&amp;!file[cyborg-maps]:build//*" />
+</component>

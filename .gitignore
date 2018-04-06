@@ -2,7 +2,9 @@
 /local.properties
 .DS_Store
 /build
-/.idea
+/.idea/*
+!/.idea/copyright/
+!/.idea/scopes/
 /.old
 /captures
 /gradle
