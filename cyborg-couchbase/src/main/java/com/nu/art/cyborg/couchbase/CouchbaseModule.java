@@ -21,7 +21,7 @@ import java.util.HashMap;
  */
 
 public class CouchbaseModule
-		extends CyborgModule {
+	extends CyborgModule {
 
 	private ReplicationBuilder[] push;
 	private ReplicationBuilder[] pull;
@@ -36,7 +36,7 @@ public class CouchbaseModule
 	}
 
 	private Database getOrCreate(final String name)
-			throws CouchbaseLiteException, IOException {
+		throws CouchbaseLiteException, IOException {
 		Database db = dbs.get(name);
 		if (db == null) {
 			InternalListener internalListener = new InternalListener() {
@@ -61,7 +61,7 @@ public class CouchbaseModule
 	}
 
 	private Manager getOrCreateManager()
-			throws IOException {
+		throws IOException {
 		if (manager == null)
 			manager = new Manager(new AndroidContext(getApplicationContext()), Manager.DEFAULT_OPTIONS);
 
@@ -69,7 +69,7 @@ public class CouchbaseModule
 	}
 
 	interface InternalListener
-			extends Database.ChangeListener, Database.DatabaseListener {
+		extends Database.ChangeListener, Database.DatabaseListener {
 
 	}
 
@@ -108,12 +108,12 @@ public class CouchbaseModule
 		}
 
 		public final void buildPush()
-				throws CouchbaseLiteException, IOException {
+			throws CouchbaseLiteException, IOException {
 			build(getOrCreate(dbName).createPushReplication(new URL(url)));
 		}
 
 		public final void buildPull()
-				throws CouchbaseLiteException, IOException {
+			throws CouchbaseLiteException, IOException {
 			build(getOrCreate(dbName).createPullReplication(new URL(url)));
 		}
 

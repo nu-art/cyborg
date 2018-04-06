@@ -116,7 +116,7 @@ public class DND_Handler<ItemType> {
 	};
 
 	private class DragTouchListener
-			implements OnTouchListener {
+		implements OnTouchListener {
 
 		long last;
 

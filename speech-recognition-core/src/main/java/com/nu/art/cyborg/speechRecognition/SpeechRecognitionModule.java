@@ -33,7 +33,7 @@ import static com.nu.art.cyborg.speechRecognition.SpeechRecognitionState.Prepari
 import static com.nu.art.cyborg.speechRecognition.SpeechRecognitionState.Recording;
 
 public class SpeechRecognitionModule
-		extends CyborgModule {
+	extends CyborgModule {
 
 	public static final int StartRMSArrayLength = 50;
 
@@ -116,7 +116,7 @@ public class SpeechRecognitionModule
 	}
 
 	private class SpeechListener
-			implements RecognitionListener {
+		implements RecognitionListener {
 
 		@Override
 		public void onReadyForSpeech(Bundle params) {
