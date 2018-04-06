@@ -19,6 +19,7 @@ import com.google.cloud.speech.v1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1.StreamingRecognizeResponse;
 import com.google.protobuf.ByteString;
 import com.nu.art.core.interfaces.Getter;
+import com.nu.art.core.utils.DebugFlags;
 import com.nu.art.cyborg.core.ActivityStack.ActivityStackAction;
 import com.nu.art.cyborg.core.CyborgActivityBridge;
 import com.nu.art.cyborg.core.modules.ThreadsModule;
@@ -38,25 +39,24 @@ import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
 
-import static com.nu.art.cyborg.stt.STT_Google.State.Idle;
-import static com.nu.art.cyborg.stt.STT_Google.State.Preparing;
-import static com.nu.art.cyborg.stt.STT_Google.State.Recording;
+import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Cancelled;
+import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Idle;
+import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Initialized;
+import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Initializing;
+import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Prepared;
+import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Preparing;
+import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Recognized;
+import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Recognizing;
 
 public class STT_Google
-		extends STT_Client {
+	extends STT_Client {
+
+	public static final String DebugFlag = "Debug_" + STT_Google.class.getSimpleName();
 
 	private static final String HOSTNAME = "speech.googleapis.com";
 	private static final int PORT = 443;
 	private static final int SampleRate = 16000;
 	private Builder speechContext;
-
-	enum State {
-		Idle,
-		Preparing,
-		Recording
-	}
-
-	private State state = Idle;
 
 	private ManagedChannel channel;
 	private SpeechStub speechClient;
@@ -80,6 +80,7 @@ public class STT_Google
 	private SpeechResponseObserver responseObserver;
 	private AudioRecorderProcessor audioRecorderProcessor = new AudioRecorderProcessor();
 	private Getter<InputStream> credentialsGetter;
+	private String locale = "en-US";
 
 	public void setCredentialsGetter(Getter<InputStream> credentialsGetter) {
 		this.credentialsGetter = credentialsGetter;
@@ -89,19 +90,19 @@ public class STT_Google
 		speechContext = SpeechContext.newBuilder().addAllPhrases(Arrays.asList(contextKeywords));
 	}
 
+	public void setSTTLocale(String locale) {
+		this.locale = locale;
+	}
+
+	public String getSTTLocale() {
+		return locale;
+	}
+
 	@Override
 	protected void init() {
 		responseObserver = new SpeechResponseObserver();
 		handler = getModule(ThreadsModule.class).getDefaultHandler(getClass().getSimpleName());
 		initializeRecognizer();
-	}
-
-	public void setState(State state) {
-		if (this.state == state)
-			return;
-
-		logInfo("State: " + this.state + " => " + state);
-		this.state = state;
 	}
 
 	private void initializeRecognizer() {
@@ -113,6 +114,7 @@ public class STT_Google
 	}
 
 	private void initializeRecognizerImpl() {
+		setState(Initializing);
 		try {
 			ProviderInstaller.installIfNeeded(getApplicationContext());
 		} catch (final GooglePlayServicesRepairableException e) {
@@ -138,6 +140,7 @@ public class STT_Google
 			channel = ManagedChannelBuilder.forAddress(HOSTNAME, PORT).build();
 			speechClient = SpeechGrpc.newStub(channel).withCallCredentials(MoreCallCredentials.from(credentials));
 			logInfo("Initialized!");
+			setState(Initialized);
 		} catch (Throwable e) {
 			logError("Failed to connect to Speech Server", e);
 		}
@@ -176,7 +179,7 @@ public class STT_Google
 	}
 
 	private class SpeechResponseObserver
-			implements StreamObserver<StreamingRecognizeResponse> {
+		implements StreamObserver<StreamingRecognizeResponse> {
 
 		String transcript;
 		boolean completed = false;
@@ -185,30 +188,31 @@ public class STT_Google
 
 		@Override
 		public void onNext(StreamingRecognizeResponse response) {
-			if (response.getResultsCount() == 0)
-				return;
-
-			if (!response.getResults(0).getIsFinal() && !started) {
-				started = true;
-				dispatchStarted();
-			} else if (response.getResults(0).getIsFinal() && started) {
-				stopSTT();
-				// stop speech analyzing
-				// dispatch speech recognition.
-				return;
-			}
-
-			if (response.getResultsCount() == 0)
+			int resultsCount = response.getResultsCount();
+			if (resultsCount == 0)
 				return;
 
 			StreamingRecognitionResult results = response.getResults(0);
+			boolean isFinal = results.getIsFinal();
 			String resultTranscript = results.getAlternatives(0).getTranscript();
 
-			if (response.getResultsCount() == 1) {
+			if (DebugFlags.isDebuggableFlag(DebugFlag))
+				logDebug("started: " + started + ", isFinal: " + isFinal + ", resultsCount: " + resultsCount + ", resultTranscript: " + resultTranscript);
+
+			if (!isFinal && !started) {
+				started = true;
+				dispatchPrepared();
+			} else if (isFinal && started) {
+				setState(Recognized);
+				stopSTT();
+				return;
+			}
+
+			if (resultsCount == 1) {
 				if (resultTranscript.length() > 0)
 					setTranscript(resultTranscript);
 
-				if (!results.getIsFinal())
+				if (!isFinal)
 					dispatchPartialResults(transcript);
 				return;
 			}
@@ -245,11 +249,13 @@ public class STT_Google
 			completed = true;
 
 			if (canceled) {
+				setState(Cancelled);
 				dispatchCancelled();
 			} else if (transcript == null)
 				dispatchRecognized("");
-			else
+			else {
 				dispatchRecognized(transcript);
+			}
 
 			dispatchStopped();
 			logInfo("Recognition completed.");
@@ -268,17 +274,7 @@ public class STT_Google
 	}
 
 	private class AudioRecorderProcessor
-			implements AudioBufferProcessor {
-
-		private State state = Idle;
-
-		private synchronized void setState(State state) {
-			this.state = state;
-		}
-
-		private synchronized boolean isState(State state) {
-			return this.state == state;
-		}
+		implements AudioBufferProcessor {
 
 		private void prepare() {
 			handler.post(new Runnable() {
@@ -286,37 +282,35 @@ public class STT_Google
 				@Override
 				public void run() {
 					try {
+						long started = System.currentTimeMillis();
 						setState(Preparing);
-						logInfo("Preparing... 0");
+						logInfo("Preparing...");
 						responseObserver.prepare();
 
-						logInfo("Preparing... 1");
-						long started = System.currentTimeMillis();
 						requestObserver = speechClient.streamingRecognize(responseObserver);
 
 						RecognitionConfig.Builder builder = RecognitionConfig.newBuilder();
 						builder.setEncoding(AudioEncoding.LINEAR16);
 						builder.setSampleRateHertz(SampleRate);
 						builder.setMaxAlternatives(2);
-						builder.setLanguageCode("en-US");
+						builder.setLanguageCode(locale);
 						if (speechContext != null)
 							builder.setSpeechContexts(0, speechContext);
-						StreamingRecognitionConfig streamingConfig = StreamingRecognitionConfig.newBuilder()
-																																									 .setConfig(builder.build())
-																																									 .setInterimResults(true)
-																																									 .setSingleUtterance(true)
-																																									 .build();
 
-						logInfo("Preparing... 2");
+						StreamingRecognitionConfig streamingConfig = StreamingRecognitionConfig.newBuilder()
+						                                                                       .setConfig(builder.build())
+						                                                                       .setInterimResults(true)
+						                                                                       .setSingleUtterance(true)
+						                                                                       .build();
+
 						StreamingRecognizeRequest initial = StreamingRecognizeRequest.newBuilder().setStreamingConfig(streamingConfig).build();
 						requestObserver.onNext(initial);
 
 						logInfo("Prepared!: " + (System.currentTimeMillis() - started) + "ms");
-						setState(Recording);
-						dispatchStarted();
+						setState(Prepared);
+						dispatchPrepared();
 					} catch (Exception e) {
 						logError("Error preparing recognizer", e);
-						state = Idle;
 						dispose();
 					}
 				}
@@ -325,7 +319,7 @@ public class STT_Google
 
 		@Override
 		public void process(ArrayList<ByteBuffer> buffer, int byteRead, int sampleRate) {
-			if (isState(Idle)) {
+			if (isState(Initialized)) {
 				prepare();
 				return;
 			}
@@ -333,13 +327,15 @@ public class STT_Google
 			if (isState(Preparing))
 				return;
 
+			if (!isState(Recognizing))
+				setState(Recognizing);
+
 			long processing = System.currentTimeMillis();
 
 			for (ByteBuffer byteBuffer : buffer) {
 				try {
-					StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder()
-																																			 .setAudioContent(ByteString.copyFrom(byteBuffer.array(), 0, byteRead))
-																																			 .build();
+					ByteString audioContent = ByteString.copyFrom(byteBuffer.array(), 0, byteRead);
+					StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().setAudioContent(audioContent).build();
 
 					if (requestObserver != null)
 						requestObserver.onNext(request);
@@ -347,7 +343,8 @@ public class STT_Google
 					if (requestObserver != null)
 						requestObserver.onError(e);
 				}
-				if (isDebug())
+
+				if (DebugFlags.isDebuggableFlag(DebugFlag))
 					logDebug("Check buffer... (" + (System.currentTimeMillis() - processing) + "ms)");
 			}
 
@@ -364,7 +361,7 @@ public class STT_Google
 					logInfo("Disposing... ");
 
 					getModule(CyborgAudioRecorder.class).setBuffering(false);
-					state = Idle;
+					setState(Initialized);
 					//					logWarning("", new WhoCalledThisException("dispose Google speech recognizer"));
 					if (requestObserver == null)
 						return;
