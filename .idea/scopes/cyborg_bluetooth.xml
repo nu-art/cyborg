@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="cyborg-bluetooth" pattern="file[cyborg-bluetooth]:*/&amp;&amp;!file[cyborg-bluetooth]:build//*" />
-</component>

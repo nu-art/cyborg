@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="cyborg-core-Android-Project" pattern="file[cyborg-core]:src/main/java/android/support//*" />
-</component>

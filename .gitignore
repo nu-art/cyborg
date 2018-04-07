@@ -3,8 +3,6 @@
 .DS_Store
 /build
 /.idea/*
-!/.idea/copyright/
-!/.idea/scopes/
 /.old
 /captures
 /gradle

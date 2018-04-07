@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="clipboard" pattern="file[clipboard]:*/&amp;&amp;!file[clipboard]:build//*" />
-</component>
