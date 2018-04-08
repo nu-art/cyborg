@@ -1,3 +1,15 @@
+[submodule "automation-agent"]
+	path = automation-agent 
+	url = git@bitbucket.org:TacB0sS/automation-agent.git 
+	branch =  master 
+[submodule "automation-core"]
+	path = automation-core 
+	url = git@bitbucket.org:TacB0sS/automation-core.git 
+	branch =  master 
+[submodule "automation"]
+	path = automation 
+	url = git@bitbucket.org:nu-art-cyborg/automation.git 
+	branch =  master 
 [submodule "belog"]
 	path = belog 
 	url = git@github.com:nu-art/belog.git 
