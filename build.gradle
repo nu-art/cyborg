@@ -19,7 +19,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.1'
         classpath 'com.adaptc.gradle:nexus-workflow:0.6'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -49,7 +49,7 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.1'
+    gradleVersion = '4.4'
 }
 
 ext."oss-releases.username" = System.getenv('OSSRH_USER_NAME')
