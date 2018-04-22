@@ -5,14 +5,14 @@ android {
 }
 
 dependencies {
-    compile project(':cyborg-core')
+    implementation project(':cyborg-core')
 
-    compile("com.google.api.grpc:grpc-google-cloud-speech-v1:0.1.26")
-    compile "com.google.android.gms:play-services-base:${GMS_VERSION}"
-    compile "com.google.android.gms:play-services-basement:${GMS_VERSION}"
-    compile "io.grpc:grpc-okhttp:${GRPC_VERSION}"
-    compile "io.grpc:grpc-protobuf:${GRPC_VERSION}"
-    compile "io.grpc:grpc-stub:${GRPC_VERSION}"
-    compile "io.grpc:grpc-auth:${GRPC_VERSION}"
-    compile 'com.google.auth:google-auth-library-oauth2-http:0.9.0'
+    implementation("com.google.api.grpc:grpc-google-cloud-speech-v1:0.1.26")
+    implementation "com.google.android.gms:play-services-base:${GMS_VERSION}"
+    implementation "com.google.android.gms:play-services-basement:${GMS_VERSION}"
+    implementation "io.grpc:grpc-okhttp:${GRPC_VERSION}"
+    implementation "io.grpc:grpc-protobuf:${GRPC_VERSION}"
+    implementation "io.grpc:grpc-stub:${GRPC_VERSION}"
+    implementation "io.grpc:grpc-auth:${GRPC_VERSION}"
+    implementation 'com.google.auth:google-auth-library-oauth2-http:0.9.0'
 }
