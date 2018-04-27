@@ -5,7 +5,6 @@
 /.idea/*
 /.old
 /captures
-/gradle
 *.iml
 *.patch
 target
