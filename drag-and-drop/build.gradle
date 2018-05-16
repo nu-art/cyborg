@@ -13,8 +13,8 @@ android {
     apply from: '../dev-tools/gradle/common-cyborg-lib.gradle'
 }
 
-//if (project.hasProperty("configureUploadJavaArtifact")) {
-//    configureUploadJavaArtifact("com.nu-art-software.core", "nu-art/${name}")
+//if (project.hasProperty("addTask_DeployJavaArtifactToCentral")) {
+//    addTask_DeployJavaArtifactToCentral("com.nu-art-software.core", "nu-art")
 //}
 
 dependencies {

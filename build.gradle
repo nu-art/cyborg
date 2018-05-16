@@ -44,7 +44,7 @@ apply from: './dev-tools/gradle/version-bump-tasks.gradle'
 
 subprojects {
     apply from: '../dev-tools/gradle/version-bump.gradle'
-    apply from: '../dev-tools/gradle/deploy-to-central.gradle'
+    apply from: '../dev-tools/gradle/deploy-artifacts.gradle'
     apply from: '../dev-tools/gradle/utils.gradle'
 }
 
