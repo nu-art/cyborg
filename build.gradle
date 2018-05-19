@@ -13,12 +13,10 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        google()
     }
     dependencies {
+        classpath 'com.google.gms:google-services:3.3.1' // google-services plugin
         classpath 'com.android.tools.build:gradle:3.1.2'
         classpath 'com.adaptc.gradle:nexus-workflow:0.6'
 
@@ -29,23 +27,20 @@ buildscript {
 
 allprojects {
     repositories {
-//        maven {
-//            url "http://maven.affectiva.com"
-//        }
+        google()
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
     }
 }
 
-apply from: './dev-tools/gradle/version-bump-tasks.gradle'
+def devToolsPath = rootProject.projectDir.getAbsolutePath() + "/dev-tools/gradle"
+apply from: devToolsPath + '/version-bump-tasks.gradle'
 
 subprojects {
-    apply from: '../dev-tools/gradle/version-bump.gradle'
-    apply from: '../dev-tools/gradle/deploy-artifacts.gradle'
-    apply from: '../dev-tools/gradle/utils.gradle'
+
+    apply from: devToolsPath + '/common-cyborg.gradle'
+    apply from: devToolsPath + '/version-bump.gradle'
+    apply from: devToolsPath + '/deploy-artifacts.gradle'
+    apply from: devToolsPath + '/utils.gradle'
 }
 
 task wrapper(type: Wrapper) {

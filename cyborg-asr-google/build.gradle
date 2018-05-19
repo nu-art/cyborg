@@ -1,8 +1,4 @@
-apply plugin: 'com.android.library'
-
-android {
-    apply from: '../dev-tools/gradle/common-cyborg-lib.gradle'
-}
+applyAndroidLibrary("com.nu-art-software.cyborg", "nu-art")
 
 dependencies {
     implementation project(':cyborg-core')
