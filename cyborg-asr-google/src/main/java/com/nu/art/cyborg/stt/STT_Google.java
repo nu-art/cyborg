@@ -23,7 +23,7 @@ import com.nu.art.core.utils.DebugFlags;
 import com.nu.art.cyborg.core.ActivityStack.ActivityStackAction;
 import com.nu.art.cyborg.core.CyborgActivityBridge;
 import com.nu.art.cyborg.core.modules.ThreadsModule;
-import com.nu.art.cyborg.inProgress.audio.STT_Client;
+import com.nu.art.cyborg.modules.STT_Client;
 import com.nu.art.cyborg.media.CyborgAudioRecorder;
 import com.nu.art.cyborg.media.CyborgAudioRecorder.AudioBufferProcessor;
 
@@ -39,14 +39,14 @@ import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
 
-import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Cancelled;
-import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Idle;
-import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Initialized;
-import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Initializing;
-import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Prepared;
-import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Preparing;
-import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Recognized;
-import static com.nu.art.cyborg.inProgress.audio.STT_Client.STTState.Recognizing;
+import static com.nu.art.cyborg.modules.STT_Client.STTState.Cancelled;
+import static com.nu.art.cyborg.modules.STT_Client.STTState.Idle;
+import static com.nu.art.cyborg.modules.STT_Client.STTState.Initialized;
+import static com.nu.art.cyborg.modules.STT_Client.STTState.Initializing;
+import static com.nu.art.cyborg.modules.STT_Client.STTState.Prepared;
+import static com.nu.art.cyborg.modules.STT_Client.STTState.Preparing;
+import static com.nu.art.cyborg.modules.STT_Client.STTState.Recognized;
+import static com.nu.art.cyborg.modules.STT_Client.STTState.Recognizing;
 
 public class STT_Google
 	extends STT_Client {
