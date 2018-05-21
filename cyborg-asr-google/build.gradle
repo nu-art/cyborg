@@ -1,4 +1,4 @@
-applyAndroidLibrary("com.nu-art-software.cyborg", "nu-art")
+applyAndroidLibrary()
 
 dependencies {
     implementation project(':cyborg-core')
@@ -11,4 +11,8 @@ dependencies {
     implementation "io.grpc:grpc-stub:${GRPC_VERSION}"
     implementation "io.grpc:grpc-auth:${GRPC_VERSION}"
     implementation 'com.google.auth:google-auth-library-oauth2-http:0.9.0'
+}
+
+if (project.hasProperty("addTask_DeployAndroidArtifactToCentral")) {
+    addTask_DeployAndroidArtifactToCentral("com.nu-art-software.cyborg", "nu-art")
 }
