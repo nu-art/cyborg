@@ -39,7 +39,8 @@ subprojects {
 
     apply from: devToolsPath + '/common-cyborg.gradle'
     apply from: devToolsPath + '/version-bump.gradle'
-    apply from: devToolsPath + '/deploy-artifacts.gradle'
+    apply from: devToolsPath + '/deploy-artifacts-central.gradle'
+    apply from: devToolsPath + '/deploy-artifacts-nexus.gradle'
     apply from: devToolsPath + '/utils.gradle'
 }
 
