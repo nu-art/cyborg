@@ -75,3 +75,6 @@
 	url = git@github.com:nu-art/reflection.git 
 	branch =  master 
 
+[submodule "local-storage"]
+	path = local-storage
+	url = git@github.com:nu-art/local-storage.git
