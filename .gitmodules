@@ -22,10 +22,6 @@
 	path = cyborg-core 
 	url = git@github.com:nu-art/cyborg-core.git 
 	branch =  master 
-[submodule "cyborg-demo-app"]
-	path = cyborg-demo-app 
-	url = git@bitbucket.org:nu-art-cyborg/cyborg-demo-app.git 
-	branch =  master 
 [submodule "cyborg-firebase"]
 	path = cyborg-firebase 
 	url = git@github.com:nu-art/cyborg-firebase.git 
@@ -81,6 +77,8 @@
 [submodule "app-demo-cyborg"]
 	path = app-demo-cyborg
 	url = git@bitbucket.org:nu-art-cyborg/app-demo-cyborg.git
+    branch =  master
 [submodule "app-performance-cyborg"]
 	path = app-performance-cyborg
 	url = git@bitbucket.org:nu-art-cyborg/app-performance-cyborg.git
+	branch =  master
