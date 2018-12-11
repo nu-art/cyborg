@@ -78,3 +78,9 @@
 	path = local-storage
 	url = git@github.com:nu-art/local-storage.git
 	branch =  master
+[submodule "app-demo-cyborg"]
+	path = app-demo-cyborg
+	url = git@bitbucket.org:nu-art-cyborg/app-demo-cyborg.git
+[submodule "app-performance-cyborg"]
+	path = app-performance-cyborg
+	url = git@bitbucket.org:nu-art-cyborg/app-performance-cyborg.git
