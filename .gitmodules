@@ -82,3 +82,9 @@
 	path = app-performance-cyborg
 	url = git@bitbucket.org:nu-art-cyborg/app-performance-cyborg.git
 	branch =  master
+[submodule "nu-art-io"]
+	path = nu-art-io
+	url = git@github.com:nu-art/nu-art-io.git
+[submodule "firebase-storage"]
+	path = firebase-storage
+	url = git@github.com:nu-art/firebase-storage.git
