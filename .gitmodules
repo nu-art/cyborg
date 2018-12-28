@@ -88,3 +88,6 @@
 [submodule "firebase-storage"]
 	path = firebase-storage
 	url = git@github.com:nu-art/firebase-storage.git
+[submodule "google-stt"]
+	path = google-stt
+	url = git@github.com:nu-art/google-stt.git
