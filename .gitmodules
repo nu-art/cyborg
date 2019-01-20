@@ -91,3 +91,6 @@
 [submodule "google-stt"]
 	path = google-stt
 	url = git@github.com:nu-art/google-stt.git
+[submodule "_wiki"]
+	path = _wiki
+	url = git@github.com:nu-art/cyborg-core.wiki.git
