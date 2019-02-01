@@ -16,14 +16,14 @@ function updateCyborgX() {
     return ${errorCode}
 }
 
-#_push --this --ignore="cyborg-x" -m="${1}" -np
-#
-#updateCyborgX
-#throwError "Error updating CyborgX" $?
-#
-#git add cyborg-x
-#git commit -m "updated cyborg-x to latest master: ${1}"
-#
+_push --this --ignore="cyborg-x" -m="${1}" -np
+
+updateCyborgX
+throwError "Error updating CyborgX" $?
+
+git add cyborg-x
+git commit -m "updated cyborg-x to latest master: ${1}"
+
 bash ./dev-tools/scripts/git/git-push.sh --debug --this --ignore="cyborg-x" -m="${1}"
 
 
