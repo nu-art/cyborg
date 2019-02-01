@@ -94,3 +94,9 @@
 [submodule "_wiki"]
 	path = _wiki
 	url = git@github.com:nu-art/cyborg-core.wiki.git
+[submodule "cyborg-core-x"]
+	path = cyborg-core-x
+	url = git@github.com:nu-art/cyborg-core.git
+[submodule "cyborg-x"]
+	path = cyborg-x
+	url = git@github.com:nu-art/cyborg-core.git

@@ -1,0 +1,5 @@
+applyAndroidApplication("com.nu.art.cyborgX", "basic-cyborg-x-app")
+
+dependencies {
+    implementation(resolveDependency('cyborg-x', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+}
