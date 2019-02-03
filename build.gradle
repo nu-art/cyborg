@@ -9,7 +9,6 @@
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     repositories {
         jcenter()
@@ -32,11 +31,12 @@ allprojects {
     }
 }
 
+def pathToVersionFile = rootProject.projectDir.getAbsolutePath() + "/" + pathToVersionFile
 def devToolsPath = rootProject.projectDir.getAbsolutePath() + "/dev-tools/gradle"
 apply from: devToolsPath + '/version-bump-tasks.gradle'
 
 subprojects {
-
+    project.pathToVersionFile = pathToVersionFile
     apply from: devToolsPath + '/common-cyborg.gradle'
     apply from: devToolsPath + '/version-bump.gradle'
     apply from: devToolsPath + '/deploy-artifacts-central.gradle'

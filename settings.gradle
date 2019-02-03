@@ -37,4 +37,5 @@ include ':automation-agent'
 include ':firebase-storage'
 
 include ':cyborg-x'
-applyIfExists('cyborg-video-demo/settings.gradle')
+
+applyNestedSettingsIfExists(settingsDir.getAbsolutePath() + '/cyborg-video-demo/settings.gradle')
