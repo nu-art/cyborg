@@ -9,7 +9,7 @@
  */
 
 rootProject.name = 'cyborg-dev-project'
-
+apply from: './dev-tools/gradle/utils.gradle'
 
 include ':app-performance-cyborg'
 include ':app-demo-cyborg'
@@ -37,3 +37,4 @@ include ':automation-agent'
 include ':firebase-storage'
 
 include ':cyborg-x'
+applyIfExists('cyborg-video-demo/settings.gradle')
