@@ -16,7 +16,7 @@ function updateCyborgX() {
     return ${errorCode}
 }
 
-_push --this --ignore="cyborg-x" -m="${1}" -np
+bash ./dev-tools/scripts/git/git-push.sh --this --ignore="cyborg-x" -m="${1}" -np
 
 updateCyborgX
 throwError "Error updating CyborgX" $?
