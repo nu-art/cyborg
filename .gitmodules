@@ -97,3 +97,6 @@
 [submodule "cyborg-x"]
 	path = cyborg-x
 	url = git@github.com:nu-art/cyborg-core.git
+[submodule "cyborg-video-demo"]
+	path = cyborg-video-demo
+	url = git@github.com:nu-art/cyborg-video-demo.git
