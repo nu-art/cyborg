@@ -13,7 +13,6 @@ apply from: './dev-tools/gradle/utils.gradle'
 
 include ':app-performance-cyborg'
 include ':app-demo-cyborg'
-include ':app-demo-cyborg-x'
 include ':local-storage'
 include ':logcat-viewer-android'
 include ':payment-stripe'
@@ -36,6 +35,7 @@ include ':automation'
 include ':automation-agent'
 include ':firebase-storage'
 
+include ':app-demo-cyborg-x'
 include ':cyborg-x'
 
 applyNestedSettingsIfExists(settingsDir.getAbsolutePath() + '/cyborg-video-demo/settings.gradle')
