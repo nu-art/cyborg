@@ -7,9 +7,8 @@ import com.nu.art.cyborg.annotations.ViewIdentifier;
 import com.nu.art.cyborg.common.consts.ViewListener;
 import com.nu.art.cyborg.core.CyborgController;
 import com.nu.art.cyborg.core.CyborgStackController;
-import com.nu.art.cyborg.core.animations.PredefinedStackTransitionAnimator;
-import com.nu.art.cyborg.core.animations.PredefinedTransitions;
-import com.nu.art.cyborg.core.animations.transitions.BaseTransition;
+import com.nu.art.cyborg.core.animations.StackTransitions;
+import com.nu.art.cyborg.core.animations.Transition;
 import com.nu.art.cyborgX.R;
 
 /**
@@ -45,24 +44,24 @@ public class Controller_HelloWorldStack
 		CyborgStackController stackController = getControllerById(R.id.Tag_RootStack);
 		stackController.createLayerBuilder()
 		               .setControllerType(Controller_HelloWorld.class)
-		               .setDuration(2000)
-		               .setStackTransitionAnimators(createLayerTransition(PredefinedTransitions.Fade))
+		               .setTransitionDuration(2000)
+		               .setTransitions(StackTransitions.Fade)
 		               .build();
 		return true;
 	}
 
 	@Override
 	public void onClick(View v) {
-		PredefinedStackTransitionAnimator animation;
+		Transition animation;
 		Class<? extends CyborgController> controllerType;
 		switch (v.getId()) {
 			case R.id.TV_AddSecondLayer1:
-				animation = new PredefinedStackTransitionAnimator(getActivity(), PredefinedTransitions.Cube, BaseTransition.ORIENTATION_HORIZONTAL);
+				animation = StackTransitions.Cube;
 				controllerType = Controller_HelloWorld.class;
 				break;
 
 			case R.id.TV_AddSecondLayer2:
-				animation = new PredefinedStackTransitionAnimator(getActivity(), PredefinedTransitions.Slide, BaseTransition.ORIENTATION_VERTICAL);
+				animation = StackTransitions.Slide;
 				controllerType = Controller_HelloWorld2.class;
 				break;
 
@@ -71,6 +70,6 @@ public class Controller_HelloWorldStack
 		}
 
 		CyborgStackController stackController = getControllerById(R.id.Tag_RootStack);
-		stackController.createLayerBuilder().setControllerType(controllerType).setStackTransitionAnimators(animation).setDuration(600).build();
+		stackController.createLayerBuilder().setControllerType(controllerType).setTransitions(animation).setTransitionDuration(600).build();
 	}
 }

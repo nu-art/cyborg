@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ./dev-tools/scripts/git/_core.sh
+source ./dev-tools/scripts/_core-tools/_source.sh
 
 if [[ "${1}" == "" ]]; then
     throwError "Missing commit message" 2
@@ -20,6 +21,10 @@ bash ./dev-tools/scripts/git/git-push.sh --this --ignore="cyborg-x" -m="${1}" -n
 
 updateCyborgX
 throwError "Error updating CyborgX" $?
+
+bash gradlew clean assembleDebug
+throwError "Error building project" $?
+
 
 git add cyborg-x
 git commit -m "updated cyborg-x to latest master: ${1}"
