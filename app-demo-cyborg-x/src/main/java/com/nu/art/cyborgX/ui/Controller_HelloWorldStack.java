@@ -7,8 +7,8 @@ import com.nu.art.cyborg.annotations.ViewIdentifier;
 import com.nu.art.cyborg.common.consts.ViewListener;
 import com.nu.art.cyborg.core.CyborgController;
 import com.nu.art.cyborg.core.CyborgStackController;
-import com.nu.art.cyborg.core.animations.StackTransitions;
-import com.nu.art.cyborg.core.animations.Transition;
+import com.nu.art.cyborg.core.stackTransitions.StackTransitions;
+import com.nu.art.cyborg.core.stackTransitions.Transition;
 import com.nu.art.cyborgX.R;
 
 /**
