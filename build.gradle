@@ -57,7 +57,9 @@ ext."oss-releases.url" = "https://oss.sonatype.org/index.html#stagingRepositorie
 apply plugin: 'nexus-workflow'
 
 nexusStaging {
-    username=System.getenv('OSSRH_USER_NAME')
-    password=System.getenv('OSSRH_PASSWORD')
+    numberOfRetries = 30
+    delayBetweenRetriesInMillis = 10000
+    username = System.getenv('OSSRH_USER_NAME')
+    password = System.getenv('OSSRH_PASSWORD')
     packageGroup = "com.nu-art-software" //optional if packageGroup == project.getGroup()
 }
