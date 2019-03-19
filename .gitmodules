@@ -1,102 +1,113 @@
+[submodule "_wiki"]
+	path = _wiki 
+	url = git@github.com:nu-art/cyborg-core.wiki.git 
+	branch = master 
+[submodule "app-demo-cyborg-x"]
+	path = app-demo-cyborg-x 
+	url = git@github.com:nu-art/app-demo-cyborg-x.git 
+	branch = master 
+[submodule "app-demo-cyborg"]
+	path = app-demo-cyborg 
+	url = git@github.com:nu-art/app-demo-cyborg.git 
+	branch = master 
+[submodule "app-performance-cyborg"]
+	path = app-performance-cyborg 
+	url = git@github.com:nu-art/app-performance-cyborg.git 
+	branch = master 
 [submodule "automation-agent"]
 	path = automation-agent 
-	url = git@bitbucket.org:TacB0sS/automation-agent.git 
-	branch =  master 
+	url = git@github.com:nu-art/automation-agent.git 
+	branch = master 
 [submodule "automation-core"]
 	path = automation-core 
-	url = git@bitbucket.org:TacB0sS/automation-core.git 
-	branch =  master 
+	url = git@github.com:nu-art/automation-core.git 
+	branch = master 
 [submodule "automation"]
 	path = automation 
-	url = git@bitbucket.org:nu-art-cyborg/automation.git 
-	branch =  master 
+	url = git@github.com:nu-art/automation.git 
+	branch = master 
 [submodule "belog"]
 	path = belog 
 	url = git@github.com:nu-art/belog.git 
-	branch =  master 
+	branch = master 
 [submodule "cyborg-bluetooth"]
 	path = cyborg-bluetooth 
 	url = git@github.com:nu-art/cyborg-bluetooth.git 
-	branch =  master 
+	branch = master 
 [submodule "cyborg-core"]
 	path = cyborg-core 
 	url = git@github.com:nu-art/cyborg-core.git 
-	branch =  master 
+	branch = master 
 [submodule "cyborg-firebase"]
 	path = cyborg-firebase 
 	url = git@github.com:nu-art/cyborg-firebase.git 
-	branch =  master 
+	branch = master 
 [submodule "cyborg-google-analytics"]
 	path = cyborg-google-analytics 
 	url = git@github.com:nu-art/cyborg-google-analytics.git 
-	branch =  master 
+	branch = master 
 [submodule "cyborg-maps"]
 	path = cyborg-maps 
 	url = git@github.com:nu-art/cyborg-maps.git 
-	branch =  master 
+	branch = master 
+[submodule "cyborg-video-demo"]
+	path = cyborg-video-demo 
+	url = git@github.com:nu-art/cyborg-video-demo.git 
+	branch = master 
+[submodule "cyborg-x"]
+	path = cyborg-x 
+	url = git@github.com:nu-art/cyborg-core.git 
+	branch = support_androidx 
 [submodule "dev-tools"]
 	path = dev-tools 
 	url = git@github.com:nu-art/dev-tools.git 
-	branch =  master 
+	branch = master 
+[submodule "firebase-storage"]
+	path = firebase-storage 
+	url = git@github.com:nu-art/firebase-storage.git 
+	branch = master 
 [submodule "generic-processor"]
 	path = generic-processor 
 	url = git@github.com:nu-art/generic-processor.git 
-	branch =  master 
+	branch = master 
+[submodule "google-stt"]
+	path = google-stt 
+	url = git@github.com:nu-art/google-stt.git 
+	branch = master 
 [submodule "http-module"]
 	path = http-module 
 	url = git@github.com:nu-art/http-module.git 
-	branch =  master 
+	branch = master 
+[submodule "local-storage"]
+	path = local-storage 
+	url = git@github.com:nu-art/local-storage.git 
+	branch = master 
 [submodule "logcat-viewer-android"]
 	path = logcat-viewer-android 
-	url = git@bitbucket.org:nu-art-cyborg/logcat-viewer-android.git 
-	branch =  master 
+	url = git@github.com:nu-art/logcat-viewer-android.git 
+	branch = master 
 [submodule "module-manager"]
 	path = module-manager 
 	url = git@github.com:nu-art/module-manager.git 
-	branch =  master 
+	branch = master 
 [submodule "nu-art-core"]
 	path = nu-art-core 
 	url = git@github.com:nu-art/nu-art-core.git 
-	branch =  master 
+	branch = master 
+[submodule "nu-art-io"]
+	path = nu-art-io 
+	url = git@github.com:nu-art/nu-art-io.git 
+	branch = master 
 [submodule "payment-core"]
 	path = payment-core 
-	url = git@bitbucket.org:nu-art-cyborg/payment-core.git 
-	branch =  master 
+	url = git@github.com:nu-art/payment-core.git 
+	branch = master 
 [submodule "payment-stripe"]
 	path = payment-stripe 
-	url = git@bitbucket.org:nu-art-cyborg/payment-stripe.git 
-	branch =  master 
+	url = git@github.com:nu-art/payment-stripe.git 
+	branch = master 
 [submodule "reflection"]
 	path = reflection 
 	url = git@github.com:nu-art/reflection.git 
-	branch =  master
-[submodule "local-storage"]
-	path = local-storage
-	url = git@github.com:nu-art/local-storage.git
-	branch =  master
-[submodule "app-demo-cyborg"]
-	path = app-demo-cyborg
-	url = git@bitbucket.org:nu-art-cyborg/app-demo-cyborg.git
-    branch =  master
-[submodule "app-performance-cyborg"]
-	path = app-performance-cyborg
-	url = git@bitbucket.org:nu-art-cyborg/app-performance-cyborg.git
-	branch =  master
-[submodule "nu-art-io"]
-	path = nu-art-io
-	url = git@github.com:nu-art/nu-art-io.git
-[submodule "firebase-storage"]
-	path = firebase-storage
-	url = git@github.com:nu-art/firebase-storage.git
-[submodule "google-stt"]
-	path = google-stt
-	url = git@github.com:nu-art/google-stt.git
-[submodule "_wiki"]
-	path = _wiki
-	url = git@github.com:nu-art/cyborg-core.wiki.git
-[submodule "cyborg-x"]
-	path = cyborg-x
-	url = git@github.com:nu-art/cyborg-core.git
-[submodule "cyborg-video-demo"]
-	path = cyborg-video-demo
-	url = git@github.com:nu-art/cyborg-video-demo.git
+	branch = master 
+
