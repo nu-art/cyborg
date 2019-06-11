@@ -19,6 +19,6 @@ public class MyApplication
 	public void onCreate() {
 		super.onCreate();
 		// Providing the first layout to preset once the application launches.
-		CyborgBuilder.startCyborg(new CyborgConfiguration(this, R.layout.cyborgview__hello_world_stack, Modules));
+		CyborgBuilder.startCyborg(new CyborgConfiguration(this).setLaunchConfiguration(R.layout.cyborgview__hello_world_stack).setModulesPacks(Modules));
 	}
 }
