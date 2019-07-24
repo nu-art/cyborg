@@ -37,5 +37,5 @@ include ':firebase-storage'
 
 include ':app-demo-cyborg-x'
 include ':cyborg-x'
-6
+
 applyNestedSettingsIfExists(settingsDir.getAbsolutePath() + '/cyborg-video-demo/settings.gradle')
