@@ -29,6 +29,8 @@ throwError "Error building project" $?
 git add cyborg-x
 git commit -m "updated cyborg-x to latest master: ${1}"
 
+git pull
+
 bash ./dev-tools/scripts/git/git-push.sh --debug --this --ignore="cyborg-x" -m="${1}"
 
 
