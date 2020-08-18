@@ -8,7 +8,7 @@
  * Email: adam.vdk@nu-art-software.com
  */
 
-rootProject.name = 'cyborg-dev-project'
+rootProject.name = 'cyborg'
 apply from: './dev-tools/gradle/utils.gradle'
 
 include ':app-performance-cyborg'
