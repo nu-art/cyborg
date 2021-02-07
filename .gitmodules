@@ -2,13 +2,7 @@
 	path = _wiki 
 	url = git@github.com:nu-art/cyborg-core.wiki.git 
 	branch = master 
-[submodule "app-demo-cyborg-x"]
-	path = app-demo-cyborg-x 
-	url = git@github.com:nu-art/app-demo-cyborg-x.git 
 	branch = master 
-[submodule "app-demo-cyborg"]
-	path = app-demo-cyborg 
-	url = git@github.com:nu-art/app-demo-cyborg.git 
 	branch = master 
 [submodule "app-performance-cyborg"]
 	path = app-performance-cyborg 
