@@ -1,0 +1,27 @@
+
+
+applyAndroidApplication("com.nu.art.cyborg.demo", "cyborg-demo")
+
+android {
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+}
+
+dependencies {
+    implementation(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+
+    implementation(project(':payment-stripe'))
+    implementation project(':cyborg-maps')
+    implementation project(':google-stt')
+    implementation project(':logcat-viewer-android')
+    implementation project(':http-module')
+    implementation project(':automation')
+    implementation 'com.google.auth:google-auth-library-oauth2-http:0.9.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation project(':automation-agent')
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation project(':automation-core')
+}

@@ -1,0 +1,62 @@
+{
+  "configs": [
+    {
+      "count": 50,
+      "folder": "${downloads}/${appName}/logs/logcat",
+      "fileName": "logcat.txt",
+      "size": 8096,
+      "key": "logcat",
+      "type": "LogcatToFileLogger"
+    },
+    {
+      "isDefault": true,
+      "key": "android-logger",
+      "type": "AndroidLogger"
+    },
+    {
+      "count": 30,
+      "size": 8096000,
+      "folder": "${downloads}/logs/${appName}/file-logger",
+      "fileName": "file-logger",
+      "isDefault": true,
+      "key": "file-logger",
+      "type": "FileLogger"
+    },
+    {
+      "count": 10,
+      "size": 8096000,
+      "folder": "${downloads}/logs/${appName}/main",
+      "fileName": "main-thread-logger",
+      "key": "main-thread-logger",
+      "type": "FileLogger"
+    },
+    {
+      "count": 30,
+      "size": 8096000,
+      "folder": "${downloads}/logs/${appName}/test",
+      "fileName": "test-file-logger",
+      "key": "test-file-logger",
+      "type": "FileLogger"
+    }
+  ],
+  "rules": [
+    {
+      "loggerKeys": [
+        "test-file-logger"
+      ],
+      "minLevel": "Debug"
+    },
+    {
+      "minLevel": "Verbose"
+    },
+    {
+      "minLevel": "Debug"
+    },
+    {
+      "loggerKeys": [
+        "main-thread-logger"
+      ],
+      "thread": "main"
+    }
+  ]
+}

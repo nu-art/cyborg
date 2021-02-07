@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~
+  ~ This software code is not an 'Open Source'!
+  ~ In order to use this code you MUST have a proper license.
+  ~ In order to obtain a licence please contact me directly.
+  ~
+  ~ Email: adam.vdk@nu-art-software.com
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Spinner
+        android:id="@+id/ServiceSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/ServiceStateInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Spinner
+        android:id="@+id/ConnectionsSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/StartService"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background__red_square"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Start"
+            />
+
+        <TextView
+            android:id="@+id/StopService"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background__red_square"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Stop"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/BindService"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background__red_square"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Bind"
+            />
+
+        <TextView
+            android:id="@+id/UnbindService"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background__red_square"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Unbind"
+            />
+    </LinearLayout>
+</LinearLayout>

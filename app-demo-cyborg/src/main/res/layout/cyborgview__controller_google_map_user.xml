@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.nu.art.cyborg.core.CyborgView
+        android:id="@+id/mapController1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        cyborg:controller="com.nu.art.cyborg.maps.google.Controller_GoogleMap"
+        cyborg:tag="c1"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#FFFF0000"
+        />
+
+    <com.nu.art.cyborg.core.CyborgView
+        android:id="@+id/mapController2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        cyborg:controller="com.nu.art.cyborg.maps.google.Controller_GoogleMap"
+        cyborg:tag="c2"
+        />
+
+
+</LinearLayout>

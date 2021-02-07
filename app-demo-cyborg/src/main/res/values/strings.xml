@@ -1,0 +1,59 @@
+<!--
+  ~ Copyright (c) 2017 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~
+  ~ This software code is not an 'Open Source'!
+  ~ In order to use this code you MUST have a proper license.
+  ~ In order to obtain a licence please contact me directly.
+  ~
+  ~ Email: adam.vdk@nu-art-software.com
+  -->
+
+<resources>
+    <string name="app_name">Cyborg-Demo</string>
+    <string name="InjectionExample_UpdateLabel">Update Label</string>
+    <string name="InjectionExample_DefaultText">I\'m just a lonely label</string>
+    <string name="ExampleLabel_Maps">Maps Example</string>
+    <string name="ExampleLabel_Injection">Injection &amp; Restore state Example</string>
+    <string name="ExampleLabel_Storage">Storage Example</string>
+    <string name="ExampleLabel_Recycler">Recycler Example\n&amp; Stateful Complex Object</string>
+    <string name="ExampleLabel_Dialog">Dialog</string>
+    <string name="ExampleLabel_EventDispatching">Event Dispatching Example</string>
+    <string name="ExampleLabel_Stack">Dynamic Controllers Stack Example</string>
+    <string name="ExampleLabel_StackTest">Stack Test</string>
+    <string name="ExampleLabel_STT">Speech to text</string>
+    <string name="ExampleLabel_AudioRecorder">Audio Recorder</string>
+    <string name="ExampleLabel_Animations">Animations</string>
+    <string name="ExampleLabel_MatrixTester">Matrix Tester</string>
+    <string name="ExampleLabel_CustomAttributes">Custom Attribute</string>
+    <string name="ExampleLabel_ServicesHandling">Services Handling</string>
+    <string name="ExampleLabel_LogcatViewer">Logcat Viewer</string>
+    <string name="ExampleLabel_BlurredImage">Blurred Image</string>
+    <string name="ExampleLabel_RoundedImage">Rounded Image</string>
+    <string name="ExampleLabel_HttpTransactions">Http Transactions</string>
+    <string name="ExampleLabel_Fingerprint">Fingerprint</string>
+    <string name="ExampleLabel_NativeCalls">Native Calls</string>
+    <string name="ExampleLabel_Contacts">Contacts</string>
+    <string name="ExampleLabel_CameraLayer">Camera Layer</string>
+    <string name="ExampleLabel_VideoView">Video View</string>
+    <string name="ExampleLabel_StamTest">Stam Test</string>
+    <string name="ExampleLabel_InternetConnectivity">Internet Connectivity</string>
+    <string name="ExampleLabel_ViewPager">View Pager</string>
+    <string name="ExampleLabel_Material">Material</string>
+    <string name="ExampleLabel_LiveModule">Live Module</string>
+    <string name="ExampleLabel_FileLogger">File Logger</string>
+    <string name="ExampleLabel_SystemVolume">System Volume</string>
+    <string name="ExampleLabel_SystemOverlay">System Overlay</string>
+    <string name="ExampleLabel_ScreenOrientation">Screen Orientation</string>
+    <string name="ExampleLabel_WifiExample">Wifi Example</string>
+    <string name="ServiceName_Foreground">Foreground Service</string>
+    <string name="ServiceName_Sticky">Sticky Service</string>
+    <string name="ExampleLabel_Payment">Payment</string>
+    <string name="ExampleLabel_DragAndDrop">Drag and Drop</string>
+    <string name="ExampleLabel_MediaPLayer">Media Player</string>
+    <string name="SpeechRecognition_Record">Record</string>
+    <string name="SpeechRecognition_Recording">Recording</string>
+    <string name="ExampleLabel_ABTesting">AB Testing</string>
+    <string name="Text_AddAndKeep">Add &amp; Keep</string>
+    <string name="Text_KeepBackground">Add &amp; Keep BG</string>
+    <string name="Text_AddDontKeep">Add Don\'t Keep</string>
+</resources>

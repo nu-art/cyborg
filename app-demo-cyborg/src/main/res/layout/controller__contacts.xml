@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~
+  ~ This software code is not an 'Open Source'!
+  ~ In order to use this code you MUST have a proper license.
+  ~ In order to obtain a licence please contact me directly.
+  ~
+  ~ Email: adam.vdk@nu-art-software.com
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:text="Contacts"
+        android:textSize="36dp"
+        />
+
+    <EditText
+        android:id="@+id/ET_Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:hint="searcn"
+        android:textSize="22dp"
+        />
+
+    <com.nu.art.cyborg.core.CyborgRecycler
+        android:id="@+id/RV_Contacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        cyborg:horizontalSpacing="10dp"
+        cyborg:landscapeColumnsCount="1"
+        cyborg:orientation="vertical"
+        cyborg:portraitColumnsCount="1"
+        cyborg:verticalSpacing="5dp"
+        />
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <com.nu.art.android.views.RoundedImageView
+        android:id="@+id/IV_RoundedImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        cyborg:corners="5dp"
+        cyborg:src="@drawable/credit_card_logo__cirrus"
+        />
+</RelativeLayout>

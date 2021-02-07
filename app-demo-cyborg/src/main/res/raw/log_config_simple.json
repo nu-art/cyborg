@@ -1,0 +1,37 @@
+{
+  "configs": [
+    {
+      "count": 50,
+      "folder": "${downloads}/logs/${appName}/logcat",
+      "fileName": "logcat.txt",
+      "size": 8096,
+      "key": "logcat",
+      "type": "LogcatToFileLogger"
+    },
+    {
+      "isDefault": true,
+      "key": "android-logger",
+      "type": "AndroidLogger"
+    },
+    {
+      "count": 30,
+      "size": 100000,
+      "folder": "${downloads}/logs/${appName}/file-logger",
+      "fileName": "file-logger",
+      "isDefault": true,
+      "key": "file-logger",
+      "type": "FileLogger"
+    }
+  ],
+  "rules": [
+    {
+      "minLevel": "Verbose"
+    },
+    {
+      "loggerKeys": [
+        "file-logger"
+      ],
+      "minLevel": "Info"
+    }
+  ]
+}

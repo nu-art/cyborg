@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~
+  ~ This software code is not an 'Open Source'!
+  ~ In order to use this code you MUST have a proper license.
+  ~ In order to obtain a licence please contact me directly.
+  ~
+  ~ Email: adam.vdk@nu-art-software.com
+  -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.nu.art.cyborg.core.CyborgRecycler
+        android:id="@+id/WifiExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TV_CurrentWifiState"
+        android:layout_alignParentTop="true"
+        cyborg:horizontalSpacing="10dp"
+        cyborg:landscapeColumnsCount="1"
+        cyborg:orientation="vertical"
+        cyborg:portraitColumnsCount="1"
+        cyborg:verticalSpacing="5dp"
+        />
+
+    <TextView
+        android:id="@+id/TV_CurrentWifiState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/LL_BottomBar"
+        />
+
+    <LinearLayout
+        android:id="@+id/LL_BottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/BTN_Adapter"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adapter"
+            />
+
+        <Button
+            android:id="@+id/BTN_Scan"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan"
+            />
+
+
+        <TextView
+            android:id="@+id/TV_ScanState"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

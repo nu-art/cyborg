@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal"
+            >
+
+            <Spinner
+                android:id="@+id/SP_Streams"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:id="@+id/IV_PlayPause"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/media_play"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal"
+            >
+
+            <Spinner
+                android:id="@+id/SP_Interpolators"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:id="@+id/IV_CrossFade"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/hammer"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.nu.art.cyborg.core.CyborgRecycler
+        android:id="@+id/RV_Tracks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        cyborg:horizontalSpacing="10dp"
+        cyborg:landscapeColumnsCount="1"
+        cyborg:orientation="vertical"
+        cyborg:portraitColumnsCount="1"
+        cyborg:verticalSpacing="5dp"
+        />
+</LinearLayout>

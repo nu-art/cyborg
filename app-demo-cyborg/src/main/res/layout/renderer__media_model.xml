@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="horizontal"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+        <CheckBox
+            android:id="@+id/CB_Selecta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="out"
+            android:visibility="invisible"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp"
+        >
+
+        <TextView
+            android:id="@+id/TV_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <SeekBar
+            android:id="@+id/SB_MediaProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/IV_PlayPause"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/media_play"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100/100"
+            android:visibility="invisible"
+            />
+
+        <TextView
+            android:id="@+id/TV_Volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            tools:text="100"
+            />
+    </RelativeLayout>
+</LinearLayout>

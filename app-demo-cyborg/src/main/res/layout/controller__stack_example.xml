@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~
+  ~ This software code is not an 'Open Source'!
+  ~ In order to use this code you MUST have a proper license.
+  ~ In order to obtain a licence please contact me directly.
+  ~
+  ~ Email: adam.vdk@nu-art-software.com
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/AddA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add A"
+            />
+
+        <Button
+            android:id="@+id/AddB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add B"
+            />
+
+        <Button
+            android:id="@+id/AddC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add C"
+            />
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/AnimationSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <CheckBox
+            android:id="@+id/ReverseCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checked="false"
+            android:text="Reverse\nDirection"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <CheckBox
+                android:id="@+id/AddToLeftStack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:text=""
+                />
+
+            <com.nu.art.cyborg.core.CyborgView
+                android:id="@+id/LeftStack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/background_stack"
+                cyborg:controller="com.nu.art.cyborg.core.CyborgStackController"
+                cyborg:rootTag="rootTag"
+                cyborg:tag="LeftPane"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <CheckBox
+                android:id="@+id/AddToRightStack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:text=""
+                />
+
+
+            <com.nu.art.cyborg.core.CyborgView
+                android:id="@+id/RightStack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/background_stack"
+                cyborg:controller="com.nu.art.cyborg.core.CyborgStackController"
+                cyborg:rootTag="rootTag"
+                cyborg:tag="RightPane"
+                cyborg:transitionDuration="1000"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ControllerStackLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center_vertical"
+            android:text="Frags"
+            />
+    </LinearLayout>
+
+</LinearLayout>
