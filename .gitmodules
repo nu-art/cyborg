@@ -21,9 +21,6 @@
 	path = belog 
 	url = git@github.com:nu-art/belog.git 
 	branch = master 
-[submodule "cyborg-bluetooth"]
-	path = cyborg-bluetooth 
-	url = git@github.com:nu-art/cyborg-bluetooth.git 
 	branch = master 
 [submodule "cyborg-core"]
 	path = cyborg-core 
