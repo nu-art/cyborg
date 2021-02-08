@@ -27,9 +27,6 @@
 	url = git@github.com:nu-art/cyborg-core.git 
 	branch = master 
 	branch = master 
-[submodule "cyborg-google-analytics"]
-	path = cyborg-google-analytics 
-	url = git@github.com:nu-art/cyborg-google-analytics.git 
 	branch = master 
 	branch = master 
 [submodule "cyborg-video-demo"]
