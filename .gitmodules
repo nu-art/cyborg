@@ -4,9 +4,6 @@
 	branch = master 
 	branch = master 
 	branch = master 
-[submodule "app-performance-cyborg"]
-	path = app-performance-cyborg 
-	url = git@github.com:nu-art/app-performance-cyborg.git 
 	branch = master 
 [submodule "automation-agent"]
 	path = automation-agent 
