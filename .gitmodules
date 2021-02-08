@@ -61,9 +61,6 @@
 	path = local-storage 
 	url = git@github.com:nu-art/local-storage.git 
 	branch = master 
-[submodule "logcat-viewer-android"]
-	path = logcat-viewer-android 
-	url = git@github.com:nu-art/logcat-viewer-android.git 
 	branch = master 
 [submodule "module-manager"]
 	path = module-manager 
