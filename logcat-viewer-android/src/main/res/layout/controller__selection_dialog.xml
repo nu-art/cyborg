@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/black_40"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg__black"
+        android:orientation="vertical"
+        >
+
+        <com.nu.art.cyborg.core.CyborgRecycler
+            android:id="@+id/rv_Selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            cyborg:horizontalSpacing="0dp"
+            cyborg:landscapeColumnsCount="1"
+            cyborg:orientation="vertical"
+            cyborg:portraitColumnsCount="1"
+            cyborg:verticalSpacing="3dp"
+            />
+    </LinearLayout>
+</RelativeLayout>

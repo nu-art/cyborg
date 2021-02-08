@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Logcat_ScrollToTop">Scroll To Top</string>
+    <string name="Logcat_ScrollToBottom">Scroll To Bottom</string>
+    <string name="Logcat_IncreaseFontSize">Text Size +</string>
+    <string name="Logcat_DecreaseFontSize">Text Size -</string>
+    <string name="Logcat_SelectLogSource">Select Log Source</string>
+    <string name="Logcat_FilterLogLevel">Filter Log Level</string>
+    <string name="Logcat_FilterThread">Filter Threads</string>
+    <string name="Logcat_FilterTag">Filter Tags</string>
+    <string name="Text_Share">Share</string>
+    <string name="Toast_DoubleTapForMenu">Double tap for menu</string>
+</resources>

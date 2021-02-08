@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyborg="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+
+        <com.nu.art.cyborg.core.CyborgRecycler
+            android:id="@+id/RV_LogcatViewer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="vertical"
+            cyborg:horizontalSpacing="0dp"
+            cyborg:landscapeColumnsCount="1"
+            cyborg:orientation="vertical"
+            cyborg:portraitColumnsCount="1"
+            cyborg:verticalSpacing="1dp"
+            tools:listitem="@layout/renderer__logcat_item"
+            />
+    </HorizontalScrollView>
+
+    <com.nu.art.cyborg.core.CyborgView
+        android:id="@+id/CV_FloatingMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        cyborg:controller="com.nu.art.cyborg.logcat.ui.Controller_FloatingMenu"
+        />
+</FrameLayout>

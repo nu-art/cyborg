@@ -1,0 +1,10 @@
+applyAndroidLibrary()
+
+dependencies {
+    implementation project(':cyborg-core')
+    implementation "com.google.code.gson:gson:${GSON_VERSION}"
+}
+
+if (project.hasProperty("addTask_DeployAndroidArtifactToCentral")) {
+    addTask_DeployAndroidArtifactToCentral("com.nu-art-software.cyborg", "nu-art")
+}
