@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ The cyborg-firebase module, meant to provide a simpler API to Firebase
+  ~ and enforce some good conventions to help you out...
+  ~
+  ~ Copyright (C) 2018  Adam van der Kruk aka TacB0sS
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<manifest
+    package="cyborg.module.firebase"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <application>
+        <service android:name="com.nu.art.cyborg.firebase.FirebaseModule$AnotherStupidService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service android:name="com.nu.art.cyborg.firebase.FirebaseModule$StupidService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

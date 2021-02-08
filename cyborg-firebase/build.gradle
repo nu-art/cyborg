@@ -1,0 +1,37 @@
+/*
+ * The cyborg-firebase module, meant to provide a simpler API to Firebase
+ * and enforce some good conventions to help you out...
+ *
+ * Copyright (C) 2018  Adam van der Kruk aka TacB0sS
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+applyAndroidLibrary()
+
+dependencies {
+    implementation "com.google.code.gson:gson:${GSON_VERSION}"
+    implementation(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+    implementation(resolveDependency('local-storage', 'com.nu-art-software', "${NU_ART_VERSION}"))
+
+    api "com.google.firebase:firebase-core:16.0.6"
+    api "com.google.firebase:firebase-messaging:17.3.4"
+    api "com.google.firebase:firebase-database:16.0.5"
+    api "com.google.firebase:firebase-storage:16.0.5"
+    api "com.google.firebase:firebase-auth:16.1.0"
+    api "com.firebase:firebase-client-android:2.5.2"
+}
+
+if (project.hasProperty("addTask_DeployAndroidArtifactToCentral")) {
+    addTask_DeployAndroidArtifactToCentral("com.nu-art-software.cyborg", "nu-art")
+}
