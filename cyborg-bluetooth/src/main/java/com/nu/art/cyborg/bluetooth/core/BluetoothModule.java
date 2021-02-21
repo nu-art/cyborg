@@ -290,12 +290,12 @@ public final class BluetoothModule
 		btAdapter.disable();
 	}
 
-	final void newDeviceDetected(final BluetoothDevice device) {
+	final void newDeviceDetected(final BluetoothDevice device, Intent intent) {
 		removeActionFromBackground(turnAdapterOff);
 		dispatchModuleEvent("New Bluetooth device found: " + device, BluetoothDeviceListener.class, new Processor<BluetoothDeviceListener>() {
 			@Override
 			public void process(BluetoothDeviceListener listener) {
-				listener.onNewDeviceDetected(device);
+				listener.onNewDeviceDetected(device, intent);
 			}
 		});
 	}

@@ -71,7 +71,7 @@ public class BT_AdapterReceiver
 				break;
 			case BluetoothDevice.ACTION_FOUND:
 				BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-				module.newDeviceDetected(device);
+				module.newDeviceDetected(device, intent);
 				break;
 
 			default:
