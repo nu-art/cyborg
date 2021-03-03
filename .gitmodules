@@ -5,14 +5,8 @@
 	branch = master 
 	branch = master 
 	branch = master 
-[submodule "automation-agent"]
-	path = automation-agent 
-	url = git@github.com:nu-art/automation-agent.git 
 	branch = master 
 	branch = master 
-[submodule "automation"]
-	path = automation 
-	url = git@github.com:nu-art/automation.git 
 	branch = master 
 [submodule "belog"]
 	path = belog 
