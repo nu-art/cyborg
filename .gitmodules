@@ -39,9 +39,6 @@
 	branch = master 
 	branch = master 
 	branch = master 
-[submodule "payment-stripe"]
-	path = payment-stripe 
-	url = git@github.com:nu-art/payment-stripe.git 
 	branch = master 
 [submodule "reflection"]
 	path = reflection 
