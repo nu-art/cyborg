@@ -29,9 +29,6 @@
 	path = dev-tools 
 	url = git@github.com:nu-art/dev-tools.git 
 	branch = master 
-[submodule "firebase-storage"]
-	path = firebase-storage 
-	url = git@github.com:nu-art/firebase-storage.git 
 	branch = master 
 [submodule "generic-processor"]
 	path = generic-processor 
