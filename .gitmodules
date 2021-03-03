@@ -30,9 +30,6 @@
 	url = git@github.com:nu-art/dev-tools.git 
 	branch = master 
 	branch = master 
-[submodule "generic-processor"]
-	path = generic-processor 
-	url = git@github.com:nu-art/generic-processor.git 
 	branch = master 
 [submodule "google-stt"]
 	path = google-stt 
