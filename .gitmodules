@@ -40,8 +40,5 @@
 	branch = master 
 	branch = master 
 	branch = master 
-[submodule "reflection"]
-	path = reflection 
-	url = git@github.com:nu-art/reflection.git 
 	branch = master 
 
