@@ -8,9 +8,6 @@
 	branch = master 
 	branch = master 
 	branch = master 
-[submodule "belog"]
-	path = belog 
-	url = git@github.com:nu-art/belog.git 
 	branch = master 
 	branch = master 
 [submodule "cyborg-core"]
