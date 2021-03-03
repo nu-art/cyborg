@@ -36,9 +36,6 @@
 	branch = master 
 	branch = master 
 	branch = master 
-[submodule "nu-art-core"]
-	path = nu-art-core 
-	url = git@github.com:nu-art/nu-art-core.git 
 	branch = master 
 [submodule "nu-art-io"]
 	path = nu-art-io 
