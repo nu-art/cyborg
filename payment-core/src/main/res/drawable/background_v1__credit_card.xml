@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~
+  ~ This software code is not an 'Open Source'!
+  ~ In order to use this code you MUST have a proper license.
+  ~ In order to obtain a licence please contact me directly.
+  ~
+  ~ Email: adam.vdk@nu-art-software.com
+  -->
+
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    >
+    <corners android:radius="3dp"/>
+    <stroke
+        android:width="1dp"
+        android:color="#333333"
+        />
+    <gradient
+        android:angle="135"
+        android:startColor="#aaaaaa"
+        android:centerColor="#dddddd"
+        android:endColor="#aaaaaa"
+        />
+</shape>

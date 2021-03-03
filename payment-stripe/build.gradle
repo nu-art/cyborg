@@ -1,0 +1,11 @@
+
+applyAndroidLibrary()
+
+dependencies {
+    api project(':payment-core')
+    api 'com.stripe:stripe-android:1.0.5'
+}
+
+//if (project.hasProperty("addTask_DeployAndroidArtifactToCentral")) {
+//    addTask_DeployAndroidArtifactToCentral("com.nu-art-software.cyborg", "nu-art")
+//}

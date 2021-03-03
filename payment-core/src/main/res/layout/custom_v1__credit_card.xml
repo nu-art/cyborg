@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 to Adam van der Kruk (Zehavi) AKA TacB0sS - Nu-Art Software
+  ~
+  ~ This software code is not an 'Open Source'!
+  ~ In order to use this code you MUST have a proper license.
+  ~ In order to obtain a licence please contact me directly.
+  ~
+  ~ Email: adam.vdk@nu-art-software.com
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_v1__credit_card"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/Image_CreditCardLogo"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        tools:background="#aa55aa"
+        />
+
+    <ImageView
+        android:id="@+id/Image_CreditCardICC"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/credit_card__icc"
+        tools:background="#aa55aa"
+        />
+
+    <LinearLayout
+        android:id="@+id/Input_Wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/Input_CreditCardNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:hint="@string/Hint_CreditCardNumber"
+            android:inputType="number"
+            tools:background="#aa55aa"
+            />
+
+        <EditText
+            android:id="@+id/Input_CreditCardCVV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
+            android:hint="@string/Hint_CreditCardCVV"
+            android:inputType="number"
+            android:minWidth="40dp"
+            tools:background="#aa55aa"
+            />
+
+        <EditText
+            android:id="@+id/Input_CreditCardDateMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="mm"
+            android:inputType="number"
+            android:minWidth="30dp"
+            tools:background="#aa55aa"
+            tools:ignore="TextFields"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="/"
+            tools:background="#aa55aa"
+            tools:ignore="HardcodedText"
+            />
+
+        <EditText
+            android:id="@+id/Input_CreditCardDateYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="yy"
+            android:inputType="number"
+            android:minWidth="30dp"
+            tools:background="#aa55aa"
+            tools:ignore="TextFields"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/Input_CardOwnerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Input_Wrapper"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/Hint_CreditCardOwnerName"
+        tools:background="#aa55aa"
+        />
+
+</LinearLayout>
