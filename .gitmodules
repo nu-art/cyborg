@@ -32,9 +32,6 @@
 	branch = master 
 	branch = master 
 	branch = master 
-[submodule "http-module"]
-	path = http-module 
-	url = git@github.com:nu-art/http-module.git 
 	branch = master 
 [submodule "local-storage"]
 	path = local-storage 
