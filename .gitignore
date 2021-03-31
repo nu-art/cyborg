@@ -14,3 +14,4 @@ target
 */**/build
 /test-script.sh
 move-github.sh
+error.tmp
