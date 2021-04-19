@@ -1,5 +1,3 @@
-
-
 rootProject.name = 'cyborg'
 apply from: './dev-tools/gradle/utils.gradle'
 
