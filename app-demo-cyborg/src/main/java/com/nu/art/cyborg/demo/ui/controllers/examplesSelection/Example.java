@@ -8,22 +8,23 @@ import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_ABTesting;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_BlurredImage;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_CameraView;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_Contacts;
+import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_DeviceAdmin;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_DialogContent;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_Fingerprint;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_GoogleMaps;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_HttpTransactions;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_InternetConnection;
-import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_WifiExample;
-import com.nu.art.cyborg.demo.ui.controllers.Controller_FileLogger;
-import com.nu.art.cyborg.demo.ui.controllers.Controller_Material;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_MediaTester;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_NativeCalls;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_Recycler;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_RoundedImage;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_Storage;
 import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_VideoView;
+import com.nu.art.cyborg.demo.ui.controllers.ControllerV1_WifiExample;
 import com.nu.art.cyborg.demo.ui.controllers.Controller_AudioRecorder;
 import com.nu.art.cyborg.demo.ui.controllers.Controller_EventDispatching;
+import com.nu.art.cyborg.demo.ui.controllers.Controller_FileLogger;
+import com.nu.art.cyborg.demo.ui.controllers.Controller_Material;
 import com.nu.art.cyborg.demo.ui.controllers.Controller_STT;
 import com.nu.art.cyborg.demo.ui.controllers.Controller_ScreenOrientation;
 import com.nu.art.cyborg.demo.ui.controllers.Controller_StackTest;
@@ -42,6 +43,7 @@ import com.nu.art.cyborg.logcat.ui.Controller_LogcatViewer;
  * A list of examples and their layouts provided in this demo project.
  */
 public enum Example {
+	DevicePolicy(R.string.ExampleLabel_DevicePolicy, ControllerV1_DeviceAdmin.class),
 	WifiExample(R.string.ExampleLabel_WifiExample, ControllerV1_WifiExample.class),
 	ScreenOrientation(R.string.ExampleLabel_ScreenOrientation, Controller_ScreenOrientation.class),
 	SystemOverlay(R.string.ExampleLabel_SystemOverlay, Controller_SystemOverlay.class),

@@ -48,6 +48,11 @@
             android:enabled="true"
             tools:replace="android:enabled"
             />
+        <receiver
+            android:name="com.nu.art.cyborg.modules.deviceAdmin.DeviceAdminReceiverImpl"
+            android:enabled="true"
+            tools:replace="android:enabled"
+            />
 
         <service android:name=".ui.controllers.servicesTypeHandling.ServiceV1_Sticky"/>
         <service android:name=".ui.controllers.servicesTypeHandling.ServiceV1_Foreground"/>

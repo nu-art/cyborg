@@ -2,14 +2,235 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_margin="8dp"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button1A"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="4dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="Enable Device Admin"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button1B"
+            android:layout_width="100dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="Disable Device Admin"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button2A"
+            android:layout_width="100dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="Allowe Tasks"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button2B"
+            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_marginLeft="4dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="Disallowe Tasks"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button3A"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text=" Lock Task"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button3B"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="Release Task"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button4A"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="Revoke self\nownership"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button4B"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="Hide Bar"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TV_DevicePolicy_Button4C"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/Blue"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="Hide Buttons"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/TV_DevicePolicy_Button1"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:text="click me"
+        android:id="@+id/TV_DevicePolicy_Output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/Red"
         />
 </LinearLayout>
