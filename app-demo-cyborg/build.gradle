@@ -3,6 +3,21 @@
 applyAndroidApplication("com.nu.art.cyborg.demo", "cyborg-demo")
 
 android {
+    defaultConfig {
+        // Set maps.apiKey in local.properties (gitignored). Never commit a real key.
+        def mapsApiKey = ""
+        def localProps = new Properties()
+        def localPropsFile = rootProject.file("local.properties")
+        if (localPropsFile.exists()) {
+            localPropsFile.withInputStream { localProps.load(it) }
+            mapsApiKey = localProps.getProperty("maps.apiKey", "")
+        }
+        if (!mapsApiKey) {
+            mapsApiKey = System.getenv("MAPS_API_KEY") ?: ""
+        }
+        manifestPlaceholders = [MAPS_API_KEY: mapsApiKey]
+    }
+
     packagingOptions {
         exclude 'META-INF/*'
     }
