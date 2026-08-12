@@ -21,7 +21,7 @@
 package com.nu.art.cyborg.automation;
 
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.view.KeyEvent;
 import android.view.MenuItem;

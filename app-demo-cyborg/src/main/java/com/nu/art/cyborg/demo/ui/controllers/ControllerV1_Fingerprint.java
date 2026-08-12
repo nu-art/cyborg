@@ -4,7 +4,7 @@ package com.nu.art.cyborg.demo.ui.controllers;
 
 import android.hardware.fingerprint.FingerprintManager.AuthenticationResult;
 import android.os.Build.VERSION_CODES;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;

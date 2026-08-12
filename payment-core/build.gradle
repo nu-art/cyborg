@@ -1,8 +1,8 @@
-
+project.ext.namespace = 'com.nu.art.cyborg.payment'
 applyAndroidLibrary()
 
 dependencies {
-    api(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+    api(resolveDependency('cyborg-x', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
 }
 
 //if (project.hasProperty("addTask_DeployAndroidArtifactToCentral")) {

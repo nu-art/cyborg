@@ -17,11 +17,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+project.ext.namespace = 'com.nu.art.cyborg.automation'
 applyAndroidLibrary()
 
 dependencies {
-    implementation(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+    implementation(resolveDependency('cyborg-x', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
     implementation(resolveDependency('automation-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
     implementation "com.google.code.gson:gson:${GSON_VERSION}"
 }

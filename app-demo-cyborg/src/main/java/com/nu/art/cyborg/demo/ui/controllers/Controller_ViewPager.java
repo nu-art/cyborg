@@ -1,7 +1,7 @@
 package com.nu.art.cyborg.demo.ui.controllers;
 
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewPager.PageTransformer;
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.ViewPager.PageTransformer;
 import android.view.View;
 import android.widget.TextView;
 

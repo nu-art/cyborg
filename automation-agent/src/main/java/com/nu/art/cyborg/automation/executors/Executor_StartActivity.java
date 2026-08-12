@@ -21,7 +21,7 @@ package com.nu.art.cyborg.automation.executors;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.test.InstrumentationRegistry;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.nu.art.automation.models.Action_StartActivity;
 import com.nu.art.cyborg.automation.core.AutomationStepExecutor;

@@ -85,14 +85,14 @@ public class ControllerV1_GoogleMaps
 	public void onMapClick(int controllerId, LatLng latLng) {
 		logInfo("MAP CLICK");
 		Controller_GoogleMap controller = getControllerById(controllerId);
-		controller.addMarker(new MapMarker(latLng, BitmapDescriptorFactory.HUE_AZURE, "What...?", R.drawable.credit_card_logo__delta));
+		controller.addMarker(new MapMarker(latLng, BitmapDescriptorFactory.HUE_AZURE, "What...?", com.nu.art.cyborg.payment.R.drawable.credit_card_logo__delta));
 	}
 
 	@Override
 	public void onMapLongClick(int controllerId, LatLng latLng) {
 		logInfo("MAP LONG CLICK");
 		Controller_GoogleMap controller = getControllerById(controllerId);
-		controller.addMarker(new MapMarker(latLng, BitmapDescriptorFactory.HUE_BLUE, "What...?", R.drawable.credit_card_logo__cirrus));
+		controller.addMarker(new MapMarker(latLng, BitmapDescriptorFactory.HUE_BLUE, "What...?", com.nu.art.cyborg.payment.R.drawable.credit_card_logo__cirrus));
 	}
 
 	@Override

@@ -14,7 +14,7 @@ include ':module-manager'
 include ':cyborg-bluetooth'
 include ':google-stt'
 include ':cyborg-firebase'
-include ':cyborg-core'
+include ':cyborg-x'
 include ':payment-core'
 include ':cyborg-maps'
 include ':generic-processor'
@@ -26,6 +26,5 @@ include ':automation-agent'
 include ':firebase-storage'
 
 include ':app-demo-cyborg-x'
-include ':cyborg-x'
 
 applyNestedSettingsIfExists(settingsDir.getAbsolutePath() + '/cyborg-video-demo/settings.gradle')

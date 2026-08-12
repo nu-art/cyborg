@@ -1,14 +1,11 @@
-<manifest
-    package="com.nu.art.cyborg.logcat"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.READ_LOGS"/>
 
     <application>
         <activity
             android:name=".Activity_ProxyText"
-            >
+            android:exported="true">
             <intent-filter>
 
                 <action android:name="android.intent.action.VIEW"/>
@@ -26,7 +23,7 @@
         </activity>
         <activity
             android:name=".Activity_ProxyZip"
-            >
+            android:exported="true">
             <intent-filter>
 
                 <action android:name="android.intent.action.VIEW"/>

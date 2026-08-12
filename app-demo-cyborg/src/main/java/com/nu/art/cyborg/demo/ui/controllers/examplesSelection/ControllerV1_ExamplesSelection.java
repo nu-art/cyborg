@@ -2,7 +2,7 @@
 
 package com.nu.art.cyborg.demo.ui.controllers.examplesSelection;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 

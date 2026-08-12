@@ -29,7 +29,7 @@ public class ControllerV1_ABTesting
 	private static Integer[] colors = {
 		R.color.Green,
 		R.color.Red,
-		R.color.white
+		com.nu.art.cyborg.R.color.white
 	};
 
 	@Override

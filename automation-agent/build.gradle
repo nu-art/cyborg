@@ -17,14 +17,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+project.ext.namespace = 'com.nu.art.cyborg.automation.test'
 applyAndroidLibrary()
 
 dependencies {
     implementation 'com.jayway.android.robotium:robotium-solo:5.5.4'
-    implementation 'com.android.support.test:runner:1.0.1'
-    implementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "androidx.test:runner:1.5.2"
+    implementation "androidx.test.espresso:espresso-core:3.5.1"
 
-    implementation project(':cyborg-core')
+    implementation project(':cyborg-x')
     implementation project(':automation')
     implementation project(':belog')
     implementation project(':reflection')

@@ -5,7 +5,7 @@ package com.nu.art.cyborg.demo.ui.controllers;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;

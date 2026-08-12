@@ -16,11 +16,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+project.ext.namespace = 'cyborg.module.google.analytics'
 applyAndroidLibrary()
 
 dependencies {
-    implementation(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+    implementation(resolveDependency('cyborg-x', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
     api "com.google.android.gms:play-services-analytics:${GMS_VERSION}"
 }
 

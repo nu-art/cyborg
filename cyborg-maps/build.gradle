@@ -16,14 +16,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+project.ext.namespace = 'com.cyborg.googlemapsmodule'
 applyAndroidLibrary()
 
 dependencies {
-    implementation(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+    implementation(resolveDependency('cyborg-x', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
 
-    api("com.google.android.gms:play-services-maps:16.0.0") {
-        exclude group: "com.android.support"
+    api("com.google.android.gms:play-services-maps:18.2.0") {
+        exclude group: "androidx.core"
         exclude group: "android.arch.lifecycle", module: 'runtime'
     }
 }

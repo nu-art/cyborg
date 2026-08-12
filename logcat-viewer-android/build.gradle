@@ -1,7 +1,8 @@
+project.ext.namespace = 'com.nu.art.cyborg.logcat'
 applyAndroidLibrary()
 
 dependencies {
-    implementation project(':cyborg-core')
+    implementation project(':cyborg-x')
     implementation "com.google.code.gson:gson:${GSON_VERSION}"
 }
 

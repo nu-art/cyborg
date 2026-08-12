@@ -1,6 +1,6 @@
 package com.nu.art.cyborg.demo;
 
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.nu.art.automation.core.AutomationScenario;
 import com.nu.art.automation.models.Action_Delay;

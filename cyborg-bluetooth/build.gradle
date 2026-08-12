@@ -16,10 +16,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+project.ext.namespace = 'cyborg.module.bluetooth'
 applyAndroidLibrary()
 
 dependencies {
-    api(resolveDependency('cyborg-core', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+    api(resolveDependency('cyborg-x', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
 }
 
 if (project.hasProperty("addTask_DeployAndroidArtifactToCentral")) {

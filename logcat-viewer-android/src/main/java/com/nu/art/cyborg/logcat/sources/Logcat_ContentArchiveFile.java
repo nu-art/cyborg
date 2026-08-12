@@ -1,7 +1,7 @@
 package com.nu.art.cyborg.logcat.sources;
 
 import android.net.Uri;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.nu.art.core.tools.FileTools;
 import com.nu.art.core.tools.StreamTools;

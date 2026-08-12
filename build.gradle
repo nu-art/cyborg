@@ -1,15 +1,12 @@
-
-apply plugin: 'io.codearte.nexus-staging'
-
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.google.gms:google-services:4.2.0' // google-services plugin
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.google.gms:google-services:4.4.0' // google-services plugin
+        classpath 'com.android.tools.build:gradle:8.2.2'
         classpath 'com.adaptc.gradle:nexus-workflow:0.6'
         classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.20.0"
 
@@ -21,7 +18,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -33,25 +30,25 @@ subprojects {
     project.pathToVersionFile = pathToVersionFile
     apply from: devToolsPath + '/common-cyborg.gradle'
     apply from: devToolsPath + '/version-bump.gradle'
-    apply from: devToolsPath + '/deploy-artifacts-central.gradle'
-    apply from: devToolsPath + '/deploy-artifacts-nexus.gradle'
+    if (rootProject.hasProperty('enableDeploy') || rootProject.hasProperty('addTask_DeployAndroidArtifactToCentral')) {
+        apply from: devToolsPath + '/deploy-artifacts-central.gradle'
+        apply from: devToolsPath + '/deploy-artifacts-nexus.gradle'
+    }
     apply from: devToolsPath + '/utils.gradle'
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.8'
 }
 
 ext."oss-releases.username" = System.getenv('OSSRH_USER_NAME')
 ext."oss-releases.password" = System.getenv('OSSRH_PASSWORD')
 ext."oss-releases.url" = "https://oss.sonatype.org/index.html#stagingRepositories"
 
-apply plugin: 'nexus-workflow'
-
-nexusStaging {
-    numberOfRetries = 30
-    delayBetweenRetriesInMillis = 10000
-    username = System.getenv('OSSRH_USER_NAME')
-    password = System.getenv('OSSRH_PASSWORD')
-    packageGroup = "com.nu-art-software" //optional if packageGroup == project.getGroup()
+if (project.hasProperty('enableDeploy') || project.hasProperty('addTask_DeployAndroidArtifactToCentral')) {
+    apply plugin: 'io.codearte.nexus-staging'
+    apply plugin: 'nexus-workflow'
+    nexusStaging {
+        numberOfRetries = 30
+        delayBetweenRetriesInMillis = 10000
+        username = System.getenv('OSSRH_USER_NAME')
+        password = System.getenv('OSSRH_PASSWORD')
+        packageGroup = "com.nu-art-software"
+    }
 }

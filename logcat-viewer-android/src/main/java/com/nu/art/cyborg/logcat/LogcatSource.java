@@ -1,6 +1,6 @@
 package com.nu.art.cyborg.logcat;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.nu.art.belog.Logger;
 import com.nu.art.belog.consts.LogLevel;

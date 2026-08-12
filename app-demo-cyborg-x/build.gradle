@@ -1,5 +1,15 @@
 applyAndroidApplication("com.nu.art.cyborgX", "basic-cyborg-x-app")
 
+configurations.all {
+	exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+	exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+}
+
 dependencies {
-    implementation(resolveDependency('cyborg-x', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+	implementation(resolveDependency('cyborg-x', 'com.nu-art-software.cyborg', "${NU_ART_VERSION}"))
+	// ProfileInstaller needs AbstractResolvableFuture + ListenableFuture (not the empty guava stub)
+	implementation 'androidx.concurrent:concurrent-futures:1.1.0'
+	implementation('com.google.guava:listenablefuture:1.0') {
+		version { strictly '1.0' }
+	}
 }

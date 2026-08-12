@@ -1,4 +1,4 @@
-
+project.ext.namespace = 'com.nu.art.cyborg.payment.stripe'
 applyAndroidLibrary()
 
 dependencies {

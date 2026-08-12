@@ -1,21 +1,16 @@
 [submodule "_wiki"]
-	path = _wiki 
-	url = git@github.com:nu-art/cyborg-core.wiki.git 
-	branch = master
-[submodule "cyborg-core"]
-	path = cyborg-core 
-	url = git@github.com:nu-art/cyborg-core.git 
+	path = _wiki
+	url = git@github.com:nu-art/cyborg-core.wiki.git
 	branch = master
 [submodule "cyborg-video-demo"]
-	path = cyborg-video-demo 
-	url = git@github.com:nu-art/cyborg-video-demo.git 
-	branch = master 
+	path = cyborg-video-demo
+	url = git@github.com:nu-art/cyborg-video-demo.git
+	branch = main
 [submodule "cyborg-x"]
-	path = cyborg-x 
-	url = git@github.com:nu-art/cyborg-core.git 
-	branch = support_androidx 
+	path = cyborg-x
+	url = git@github.com:nu-art/cyborg-core.git
+	branch = main
 [submodule "dev-tools"]
-	path = dev-tools 
-	url = git@github.com:nu-art/dev-tools.git 
-	branch = master 
-
+	path = dev-tools
+	url = git@github.com:nu-art/dev-tools.git
+	branch = main

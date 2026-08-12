@@ -20,7 +20,7 @@ package com.nu.art.cyborg.demo;
 
 import android.os.Handler;
 import android.os.Message;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.nu.art.belog.Logger;
 import com.nu.art.cyborg.core.modules.ThreadsModule;

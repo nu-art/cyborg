@@ -2,6 +2,8 @@
 
 package com.nu.art.cyborg.demo.ui.controllers.liveModule;
 
+import android.graphics.Color;
+
 import com.nu.art.cyborg.core.CyborgController;
 import com.nu.art.cyborg.demo.R;
 import com.nu.art.modular.core.HackApi;
@@ -22,7 +24,7 @@ public class Controller_LiveModule
 	@Override
 	protected void onCreate() {
 		super.onCreate();
-		getRootView().setBackgroundColor(getColor(R.color.white));
+		getRootView().setBackgroundColor(Color.WHITE);
 		HackApi.registerModuleInstance(module);
 	}
 }
