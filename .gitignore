@@ -15,3 +15,10 @@ target
 /test-script.sh
 move-github.sh
 error.tmp
+/unity-poc/Library
+/unity-poc/Temp
+/unity-poc/Logs
+/unity-poc/obj
+/unity-poc/Builds
+/unity-poc/.utmp
+/unity-poc/UserSettings

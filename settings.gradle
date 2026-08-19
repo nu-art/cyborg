@@ -26,5 +26,12 @@ include ':automation-agent'
 include ':firebase-storage'
 
 include ':app-demo-cyborg-x'
+include ':app-demo-cyborg-unity'
+
+def unityLibraryDir = new File(settingsDir, 'unity-poc/Builds/Android/unityLibrary')
+if (new File(unityLibraryDir, 'build.gradle').exists()) {
+	include ':unityLibrary'
+	project(':unityLibrary').projectDir = unityLibraryDir
+}
 
 applyNestedSettingsIfExists(settingsDir.getAbsolutePath() + '/cyborg-video-demo/settings.gradle')
