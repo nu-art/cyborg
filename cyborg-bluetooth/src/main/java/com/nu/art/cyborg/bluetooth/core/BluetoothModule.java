@@ -101,7 +101,7 @@ public final class BluetoothModule
 
 		inquiryLogic = new InquiryLogic();
 		macAddress = Secure.getString(getContentResolver(), "bluetooth_address");
-		registerReceiver(BT_AdapterReceiver.class);
+		registerSystemReceiver(BT_AdapterReceiver.class);
 		postOnUI(new Runnable() {
 			@Override
 			public void run() {
